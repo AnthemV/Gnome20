@@ -32,7 +32,7 @@ A full style for Roll20, including a great deal of tweaking and polish in order 
 
 
 ## GnomeTube Music 
-A basic style for YouTube Music. Intended for use with a patched version of the [Firefox GNOME Theme](https://github.com/rafaelmardojai/firefox-gnome-theme), and the [Progressive Web Apps for Firefox](https://github.com/filips123/PWAsForFirefox) project (coming soon). 
+Currently in progress. A basic style for YouTube Music. Intended for use with a patched version of the [Firefox GNOME Theme](https://github.com/rafaelmardojai/firefox-gnome-theme) (coming soon), and the [Progressive Web Apps for Firefox](https://github.com/filips123/PWAsForFirefox) project. 
 
 <p align="left">
   <a target="_blank" rel="noopener noreferrer" href="https://github.com/AnthemV/GNOME-CSS/raw/main/Gnome20.user.styl">
