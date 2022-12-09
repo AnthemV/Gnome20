@@ -20,7 +20,7 @@ A full style for Roll20, including a great deal of tweaking and polish in order 
 <p align="left">
   </a>
   <br/>
-  <img src="Screenshots/Screenshot from 2022-12-09 17-12-19.png" width="70%" style="max-width: 70%;"/>
+  <img src="Screenshots/Screenshot from 2022-12-09 17-12-19.png" width="100%" style="max-width: 100%;"/>
 </p>
 
 
@@ -36,5 +36,5 @@ Currently in progress. A basic style for YouTube Music. Intended for use with a 
  <p align="left">
   </a>
   <br/>
-  <img src="Screenshots/Screenshot from 2022-12-09 16-53-52.png" width="70%" style="max-width: 70%;"/>
+  <img src="Screenshots/Screenshot from 2022-12-09 16-53-52.png" width="100%" style="max-width: 100%;"/>
 </p>
