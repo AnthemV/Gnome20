@@ -2,7 +2,7 @@
 A collection of userstyles to theme various websites in the GNOME Libadwaita style. 
 
 ## Usage
-Make sure you have the browser extention Stylus installed ([Firefox.](https://addons.mozilla.org/en-US/firefox/addon/styl-us/) [Chrome.](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne)), then just click the "Install with Stylus" buttons.
+Install the browser extention Stylus ([Firefox.](https://addons.mozilla.org/en-US/firefox/addon/styl-us/) [Chrome.](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne)), then click the "Install directly with Stylus" buttons.
 
 
 
