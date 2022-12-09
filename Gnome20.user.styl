@@ -1,1 +1,1312 @@
+/* ==UserStyle==
+@name           Gnome20
+@version        1.0
+@description    If you have to use Roll20, at least make it look nice!
+@author         AnthemV
+@license        Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
+==/UserStyle== */
 
+@-moz-document url-prefix("https://app.roll20.net/editor") {
+/* Firefox Gnome Theme Colors*/
+@namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* I have taken this directly from the Firefox Gnome Theme (https://github.com/rafaelmardojai/firefox-gnome-theme).*/
+
+
+/* Variables that start with --gnome- are added by me and are assigned
+ * to elements somewhere in this code. The rest of the variables are
+ * built-in in Firefox, so you need to add an !important if you wanna
+ * override them. */
+@media (prefers-color-scheme: dark) {
+	:root {
+		/* Browser area before a page starts loading */
+		--gnome-browser-before-load-background: #242424;
+		
+		/* Accent */
+		--gnome-accent-bg: #3584e4;
+		--gnome-accent: #78aeed;
+
+		/* Toolbars */
+		--gnome-toolbar-background: #242424;
+		--gnome-toolbar-color: #ffffff;
+		--gnome-toolbar-border-color: rgba(255, 255, 255, .15);
+		--gnome-toolbar-icon-fill: #eeeeec;
+		--gnome-inactive-toolbar-color: #919190;
+		--gnome-inactive-toolbar-background: var(--gnome-toolbar-background);
+		--gnome-inactive-toolbar-border-color: #3F3F3F;
+		--gnome-inactive-toolbar-icon-fill: #919190;
+
+		/* Sidebar */
+		--gnome-sidebar-background: var(--gnome-toolbar-background);
+		--gnome-inactive-sidebar-background: var(--gnome-sidebar-background);
+
+		/* Menus */
+		--gnome-menu-background: #383838;
+		--gnome-menu-border-color: rgba(0, 0, 0, .14);
+		--gnome-menu-shadow: 0 1px 5px 1px rgba(0,0,0, .09), 0 2px 14px 3px rgba(0,0,0, .05);
+		--gnome-menu-button-hover-background: var(--gnome-button-background);
+		--gnome-menu-separator-color: rgba(255, 255, 255, .1);
+
+		/* Header bar */
+		--gnome-headerbar-background: #303030;
+		--gnome-headerbar-border-color: var(--gnome-toolbar-border-color);
+		--gnome-inactive-headerbar-background: var(--gnome-inactive-toolbar-background);
+		--gnome-inactive-headerbar-border-color: var(--gnome-inactive-toolbar-border-color);
+
+		/* Buttons */
+		--gnome-button-background: rgba(255, 255, 255, .1);
+		--gnome-button-hover-background: rgba(255, 255, 255, .15);
+		--gnome-button-active-background: rgba(255, 255, 255, .3);
+		--gnome-button-flat-hover-background: rgba(255, 255, 255, .07);
+		--gnome-button-flat-active-background: rgba(255, 255, 255, .1);
+		--gnome-button-suggested-action-background: var(--gnome-accent-bg);
+		--gnome-button-destructive-action-background: #e01b24;
+
+		--gnome-button-close-background: var(--gnome-button-flat-hover-background);
+		--gnome-button-hover-close-background:var(--gnome-button-hover-background);
+		--gnome-button-active-close-background: var(--gnome-button-active-background);
+
+		/* Entries */
+		--gnome-entry-background: rgba(255, 255, 255, .1);
+		--gnome-entry-color: #ffffff;
+		--gnome-inactive-entry-color: #d6d6d6;
+		--gnome-focused-urlbar-border-color: rgba(120, 174, 237, .5); /* Same as --gnome-accent but with opacity*/
+
+		/* Switch */
+		--gnome-switch-background: rgba(255, 255, 255, .15);
+		--gnome-switch-slider-background: #d2d2d2;
+		--gnome-switch-active-background: var(--gnome-accent-bg);
+		--gnome-switch-active-slider-background: #ffffff;
+
+		/* Tabs */
+		--gnome-tabbar-tab-background: #262626;
+		--gnome-tabbar-tab-border-color: var(--gnome-toolbar-border-color);
+		--gnome-tabbar-tab-hover-background: #2D2D2D;
+		--gnome-tabbar-tab-active-background: #303030;
+		--gnome-tabbar-tab-active-background-contrast: #4F4F4F;
+		--gnome-tabbar-tab-active-hover-background: #363636;
+		--gnome-inactive-tabbar-tab-background: #1C1C1C;
+		--gnome-inactive-tabbar-tab-active-background: #242424;
+		--gnome-tab-button-background: rgba(0, 0, 0, .5);
+		--gnome-tab-button-hover-background: rgba(0, 0, 0, .6);
+		--gnome-tabbar-tab-identity-base-opacity: 0;
+	}
+
+	/* Private window colors */
+	:root {
+		--gnome-private-accent: #71A1DB;
+		
+		/* Toolbars */
+		--gnome-private-toolbar-background: #1C2438;
+		--gnome-private-inactive-toolbar-background: var(--gnome-private-toolbar-background);
+		/* Menus */
+		--gnome-private-menu-background: #252F49;
+		/* Header bar */
+		--gnome-private-headerbar-background: #252F49;
+		--gnome-private-inactive-headerbar-background: var(--gnome-private-toolbar-background);
+
+		/* Text color for Firefox Logo in new private tab */
+		--gnome-private-wordmark: #FBFBFE;
+
+		/* New private tab background */
+		--gnome-private-in-content-page-background: #1C2438;
+
+		/* Private browsing info box */
+		--gnome-private-text-primary-color: #FBFBFE;
+	}
+}
+}
+
+@-moz-document url-prefix("https://app.roll20.net/editor") {
+/* Gnome20 */
+
+/* Color Variables */
+:root {
+    --dark-primary: var(--gnome-accent-bg);
+    --dark-primary-highlight: var(--gnome-accent);
+    --dark-surface1: var(--gnome-sidebar-background);
+    --dark-surface2: var(--gnome-sidebar-background);
+    --dark-purple-text: var(--gnome-accent) !important;
+    --el-button-border-color: var(--gnome-accent-bg);
+    --el-button-hover-bg-color: var(--gnome-accent);
+    --el-button-active-bg-color: var(--gnome-accent);
+    --el-button-hover-border-color: var(--gnome-accent-bg);
+    --dark-background: var(--gnome-inactive-tabbar-tab-background);
+    --color-primary-text: var(--gnome-accent-bg) !important;
+    --el-border-color-light: var(--gnome-accent) !important;
+    --el-color-primary: var(--gnome-accent-bg) !important;
+    --el-fill-color-light: var(--gnome-menu-button-hover-background) !important;
+    --el-border-radius-base: 8px !important;
+    --el-border-color: var(--gnome-button-active-background) !important;
+    --el-border-color-hover: var(--gnome-accent) !important;
+}
+
+/* Fonts */
+body {
+    font-family: Inter, "Proxima Nova", "ProximaNova-Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+/* Dark Mode Toggle */
+input:checked + .dark-mode-slider {
+    background-color: var(--gnome-accent-bg);
+}
+
+.dark-mode-switch {
+    transform: rotate(90deg);
+    top: 273px;
+    left: 9px;
+    scale: 0.65;
+}
+
+.dark-mode-switch:hover .tooltiptext {
+    rotate: 270deg;
+    margin-left: -157px;
+    margin-top: -113px;
+    scale: 1.3;
+    padding-right: 4px;
+    padding-left: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+
+#darkmode-switch-icon > path:nth-child(1) {
+    filter: hue-rotate(300deg) brightness(173%)
+}
+
+/* Sidebar */
+#rightsidebar .ui-tabs-nav li.ui-state-active a {
+    border-radius: 7px;
+    background-color: var(--gnome-button-flat-active-background);
+    color: transparent;
+}
+
+
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default {
+    text-shadow: 0px 0px rgb(255, 255, 255);
+}
+
+#rightsidebar {
+    width: 329px !important;
+}
+
+
+
+.ui-widget-content:not(#textchat) {
+    border-radius: 0px;
+    border-color: var(--gnome-tabbar-tab-active-background-contrast);
+}
+
+#rightsidebar ul.tabmenu li a {
+    color: transparent;
+}
+
+.tabmenu {
+    margin-top: 5px !important;
+}
+
+#textchat,
+#imagedialog,
+#journal,
+#compendium,
+#jukebox,
+#deckstables,
+#vm_settings_categories {
+    margin-top: 0px !important;
+    border-top-width: 1px;
+    border-color: var(--gnome-tabbar-tab-active-background-contrast) !important;
+}
+
+
+#ui-id-1,
+#ui-id-2,
+#ui-id-3,
+#ui-id-4,
+#ui-id-5,
+#ui-id-6,
+#ui-id-7 {
+    border-bottom-width: 1px !important;
+    border-bottom-style: solid !important;
+    border-radius: 7px !important;
+    scale: 0.8 !important;
+    height: 33.533px;
+    margin-top: -1px;
+    padding-top: 2px !important;
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+    margin-right: -4px !important;
+    margin-left: -4px;
+}
+
+#ui-id-5 {
+    margin-left: -3.5px !important;
+}
+
+#ui-id-6 {
+    margin-left: -3.5px !important;
+}
+
+#ui-id-1:hover,
+#ui-id-2:hover,
+#ui-id-3:hover,
+#ui-id-4:hover,
+#ui-id-5:hover,
+#ui-id-6:hover,
+#ui-id-7:hover {
+    background-color: var(--gnome-button-flat-hover-background)
+}
+
+#ui-id-6 {
+    height: 32.533px !important;
+    padding-top: 3px !important;
+}
+
+#ui-id-5 {
+    height: 30.533px !important;
+    padding-bottom: 3px !important;
+}
+
+.tabmenu {
+    margin-top: 4px !important;
+    background-color: var(--gnome-headerbar-background) !important;
+    padding-right: 8px !important;
+    padding-left: 16px !important;
+    padding-bottom: 3px !important;
+}
+
+.tabmenu:hover {
+    border-bottom-style: none !important;
+    border-bottom-width: 0px !important;
+}
+
+/* Searchbar */
+.add-clear-span > a:nth-child(2) {
+    padding-top: 2.5px;
+}
+
+.add-clear-span > input:nth-child(1) {
+    padding-left: 8px;
+    padding-right: 23px;
+    width: calc(100% - 31px) !important;
+}
+
+/* Text Entry Box Area */
+#textchat-input {
+    right: 0px;
+    margin-right: 0px;
+    background-color: var(--gnome-menu-border-color) !important;
+    border-top-width: 1px !important;
+    margin-bottom: 0px;
+    padding-bottom: 12px;
+    padding-top: 12px;
+    border-style: solid;
+    border-left-width: 0px;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    border-color: var(--gnome-tabbar-tab-active-background-contrast);
+    padding-left: 9px;
+    width: 311px;
+    padding-right: 9px;
+}
+
+#textchat-input textarea {
+    background-color: var(--gnome-entry-background);
+    border-style: hidden;
+}
+
+.ui-autocomplete-input {
+    width: 298px !important;
+    margin-left: 3px !important;
+}
+
+div#textchat-input div select#speakingas.selectize {
+    background: var(--gnome-entry-background);
+    border: 0px solid var(--gnome-tabbar-tab-active-background-contrast);
+    border-radius: 12px;
+}
+
+#textchat-input button {
+    width: auto;
+    border-radius: 12px;
+}
+
+#textchat-input > div:nth-child(5) > label:nth-child(1) {
+    margin-top: 6px !important;
+    margin-left: 1px;
+}
+
+div#textchat-input textarea.ui-autocomplete-input:focus,
+select#speakingas.selectize:focus {
+    outline: 2px solid var(--gnome-focused-urlbar-border-color) !important;
+}
+
+input:hover,
+textarea:hover,
+select:hover {
+    border-color: var(--gnome-accent);
+}
+
+button.el-button:nth-child(1) {
+    margin-bottom: 12px !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 0px solid;
+    border-color: var(--gnome-accent-bg) !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--gnome-accent)
+}
+
+button.btn:nth-child(6) {
+    height: 16px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+#speakingas {
+    margin-bottom: 3px;
+    margin-right: 4px;
+    width: 220px;
+}
+
+#textchat-input > div:nth-child(5) {
+    width: 262.367px;
+}
+
+/* Roll20 Greeting Chat Message */
+.userscript-commandintro > img:nth-child(1) {
+    filter: brightness(130%) hue-rotate(290deg);
+}
+
+.userscript-commandintro > ul:nth-child(4) > li:nth-child(2) {
+    padding-bottom: 20px;
+    margin-bottom: 0px;
+}
+
+
+[class="message system"] {
+    left: -12px;
+    width: 260px;
+    padding-left: 60px;
+}
+
+.textchatcontainer .message.system:nth-of-type(n+2) {
+    margin-top: 20px !important;
+    margin-bottom: -20px !important;
+    width: 269px !important;
+}
+
+/* Jukebox and Search Info*/
+#jukeboxwhatsplaying,
+div#searchinfo {
+    border: 1px solid var(--gnome-button-active-background) !important;
+    border-radius: 8px !important;
+}
+
+#jukebox hr {
+    border-top-color: var(--gnome-tabbar-tab-active-background-contrast);
+}
+
+#jukeboxwhatsplaying {
+    padding-top: 6px;
+    padding-left: 6px;
+    padding-bottom: 3px;
+}
+
+/* Exit Game Button */
+html.dark .el-button {
+    --el-button-disabled-text-color: rgba(255, 255, 255, 0.5) !important;
+    --el-button-hover-text-color: #E6E6E6 !important;
+    --el-button-border-color: var(--gnome-accent-bg) !important;
+    --el-button-hover-bg-color: var(--gnome-focused-urlbar-border-color) !important;
+    --el-button-active-bg-color: var(--gnome-accent) !important;
+    --el-button-hover-border-color: var(--gnome-accent-bg) !important;
+}
+
+/* Start of Chat */
+div.chatlogmessage {
+    padding-top: 7px;
+    width: 265px;
+    padding-bottom: 10px !important;
+    margin-bottom: 0px !important;
+    margin-top: 0px !important;
+}
+
+[id="openchatarchive"] {
+    padding-left: 0px;
+    margin-left: -4px;
+}
+
+[class="spacer"]:first-of-type {
+    margin-top: 0px !important
+}
+
+/* Check Marks */
+.el-checkbox__inner {
+    display: inline-block;
+    position: relative;
+    border: var(--el-checkbox-input-border);
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: transparent;
+    z-index: var(--el-index-normal);
+    transition: border-color .25s cubic-bezier(0.71, -0.46, 0.29, 1.46), background-color .25s cubic-bezier(0.71, -0.46, 0.29, 1.46), outline .25s cubic-bezier(0.71, -0.46, 0.29, 1.46);
+    border-color: var(--gnome-accent)
+}
+
+.el-checkbox__input.is-checked .el-checkbox__inner {
+    background-color: var(--gnome-accent-bg);
+    border-color: var(--gnome-accent);
+}
+
+.dark .el-checkbox__input.is-checked + .el-checkbox__label {
+    color: var(--gnome-accent);
+}
+
+#rightsidebar .paddedtable h3 {
+    padding-top: 8px;
+}
+
+#advancedSearch {
+    margin-top: -49px;
+    margin-right: 4px;
+}
+
+#rightsidebar .paddedtable button:not(:last-child) {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    margin-top: 10px;
+    margin-right: -1px;
+}
+
+#jukebox.paddedtable.ui-tabs-panel.ui-widget-content.ui-corner-bottom div.instructions p {
+    margin-top: -24px;
+}
+
+#deckstables.paddedtable.ui-tabs-panel.ui-widget-content.ui-corner-bottom p {
+    margin-top: -24px;
+}
+
+#deckstables.paddedtable.ui-tabs-panel.ui-widget-content.ui-corner-bottom label {
+    margin-left: 8px;
+}
+
+#deckstables.paddedtable.ui-tabs-panel.ui-widget-content.ui-corner-bottom hr {
+    border-top-color: var(--gnome-tabbar-tab-active-background-contrast);
+}
+
+.table > thead > tr > th {
+    border-bottom-color: var(--gnome-tabbar-tab-active-background-contrast);
+    border-bottom-width: 1px;
+}
+
+#existingmacros > thead:nth-child(1) > tr:nth-child(1) > th:nth-child(1) {
+    border-bottom-width: 1px;
+    border-color: var(--gnome-tabbar-tab-active-background-contrast);
+}
+
+/* Art Library */
+#imagedialog > div:nth-child(1) {
+    width: 94%;
+}
+
+#imagedialog > div:nth-child(1) > p:nth-child(2) {
+    margin-top: 3px;
+}
+
+
+.searchinfotoggle {
+    display: unset !important;
+    margin-left: -28px !important;
+}
+
+.searchinfotoggle:active {
+    color: var(--gnome-inactive-toolbar-icon-fill);
+}
+
+#imagedialog > div:nth-child(1) > input:nth-child(4) {
+    width: calc(100% - 36px) !important;
+    padding-right: 30px !important;
+}
+
+#searchinfo pre {
+    padding: 4.5px !important;
+    color: var(--dark-primarytext) !important;
+    background-color: var(--gnome-entry-background) !important;
+    border: 0px solid;
+    border-radius: var(--el-border-radius-base) !important;
+}
+
+#searchinfo > span:nth-child(n) > pre:nth-child(n) {
+    margin-top: 6px !important;
+    width: calc(100% - 14px) !important;
+    padding-left: 9.5px !important;
+}
+
+#searchinfo {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    padding-top: 9px !important;
+}
+
+#searchinfo > span:nth-child(4) > pre:nth-child(1) {
+    margin-bottom: 6px !important;
+}
+
+#imagedialog .tabcontainer a:hover {
+    color: var(--gnome-inactive-toolbar-icon-fill);
+}
+
+#rightsidebar .paddedtable button:not(:last-child) {
+    display: block;
+    margin-top: 6px;
+}
+
+#imagedialog .tabcontainer a:hover {
+    /* color: #c6abd3; */
+    color: var(--gnome-inactive-toolbar-icon-fill);
+}
+
+
+#marketplacelibrary > ol:nth-child(1) > li:nth-child(3) > button:nth-child(2) {
+    margin-top: 6px;
+}
+
+div.tabcontainer:nth-child(7) {
+    margin-left: 19px;
+    margin-top: -8px;
+}
+
+.showuploaddialog {
+    /* margin-right: 15px; */
+    margin-right: 5px !important;
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+    margin-top: -2px !important;
+}
+
+.addlibraryfolder {
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+    padding-right: 6px !important;
+    padding-left: 6px !important;
+    margin-top: -2px !important;
+    margin-right: 7px !important;
+}
+
+.no-touch .dd-content:hover {
+    color: var(--gnome-accent);
+}
+
+#userlibrary > div:nth-child(5) {
+    padding-left: 6px;
+    padding-right: 6px;
+    margin-top: -21px;
+}
+
+div.tabcontainer:nth-child(3) {
+    margin-top: 4px;
+}
+
+/* Popup Selection Boxes */
+div.el-popper:nth-child(2) {
+    border-radius: var(--el-border-radius-base);
+}
+
+
+/* Dice Roller Window */
+.dicetype {
+    width: 75px;
+    position: relative;
+    top: 0px;
+    margin-right: 5px;
+}
+
+.numdice {
+    width: 35px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.targettype {
+    width: 40px;
+    position: relative;
+    top: 0px;
+    margin-left: 5px;
+}
+
+.recentupload {
+    padding-left: 0px;
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+
+/* Tab in Sidebar */
+.nav-tabs > li.active > a,
+.nav-tabs > li > a:hover,
+.nav-tabs > li > a:focus {
+    margin-bottom: 1px;
+    background-color: var(--gnome-button-background) !important;
+}
+
+.nav-tabs > li:not(.active) > a:hover,
+.nav-tabs > li:not(.active) > a:focus {
+    background-color: var(--gnome-button-hover-background) !important;
+    color: var(--dark-primarytext);
+}
+
+.nav-tabs {
+    border-bottom-color: var(--gnome-tabbar-tab-active-background-contrast);
+}
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+    color: var(--dark-primarytext);
+    border-color: transparent !important;
+}
+
+#settingsVideoTab > a:nth-child(1), .nav > li:nth-child(1) > a:nth-child(1) {
+border-radius: 8px 8px 0px 0px !important;
+}
+
+/* Slider */
+.el-slider__bar {
+    background-color: var(--gnome-accent-bg);
+}
+
+.el-popper.is-dark {
+ color:var(--dark-primarytext);
+ border:1px solid var(--gnome-accent);
+ background: var(--gnome-accent);
+}
+
+
+/* Dropdown */
+.panel-default > .panel-heading + .panel-collapse > .panel-body {
+    border-top-color: var(--gnome-tabbar-tab-active-background-contrast);
+    margin-left: -1px;
+    margin-right: -1px;
+    border-top: 1px solid var(--gnome-tabbar-tab-active-background-contrast);
+}
+
+#collapseAudioAndVideo > .panel-body[data-v-e55e2da6] {
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+/* Macros */
+div.macrobox:nth-child(n) > button:nth-child(n) {
+    background: var(--gnome-button-background) !important;
+    color: #E6E6E6 !important;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0) !important;
+    border: 1px solid transparent !important;
+    border-radius: 7px;
+    font-weight: 600;
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+}
+
+div.macrobox:nth-child(n) > button:nth-child(n):hover {
+    background: var(--gnome-button-hover-background) !important;
+}
+
+div.macrobox:nth-child(n) {
+    background-color: transparent !important;
+    margin-right: 9px !important;
+}
+
+div.macrobox:nth-child(n):hover {
+    background-color: transparent !important;
+    margin-right: 9px !important;
+}
+
+#macrobar_macros {
+    background-color: var(--gnome-toolbar-background);
+    width: calc(100% - 20px);
+    margin-left: -2px;
+    padding-left: 17px;
+    border-radius: 0px 12px 0px 0px;
+    padding-top: 6px;
+    padding-right: 1px;
+    padding-bottom: 6px;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-color: var(--gnome-tabbar-tab-active-background-contrast);
+}
+
+#macrobar {
+    margin-bottom: -9px;
+    margin-left: -8px;
+    margin-right: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    width: auto;
+}
+
+#macrobar div.macrobox:hover,
+#macrobar div.macrobox.ui-sortable-helper {
+    padding-right: 0px;
+}
+
+/* Player Names */
+div.playername:nth-child(n) {
+    border-radius: 5px;
+    border-color: var(--gnome-menu-background);
+}
+
+div.color_picker:nth-child(n), div.playercolor {
+    border-radius: 5px !important;
+    width: 14px !important;
+    height: 14px !important;
+    margin-top: 5px !important;
+    margin-right: 5px !important;
+}
+
+.player .playername {
+    background-color: var(--gnome-tab-button-hover-background);
+    font-size: 15px;
+    font-family: rubik;
+    text-align: left;
+    padding-left: 9px;
+    width: 141px;
+    margin-bottom: 1px !important;
+}
+
+#avatarContainer {
+    margin-bottom: -20px;
+    margin-left: 1px;
+}
+
+/* Video Popups */
+.player .video {
+    border-radius: 5px;
+}
+
+.video {
+    margin-bottom: 3px;
+}
+
+
+/* Chat */
+.textchatcontainer .avatar img {
+    width: 28px !important;
+    height: 28px !important;
+    border-radius: 23px;
+    margin-top: 14px;
+    margin-left: -5px;
+    border-top: 1px;
+    border-color: var(--gnome-tabbar-tab-active-background-contrast);
+    border-width: 2px;
+    border-style: solid;
+    background: var(--gnome-tabbar-tab-active-background-contrast);
+}
+
+[class="spacer"] {
+    width: 1101px !important;
+    height: 0.89116666666666666px !important;
+    background-color: var(--gnome-tabbar-tab-active-background-contrast) !important;
+    margin-left: -57px !important;
+    margin-bottom: 24px !important;
+    margin-top: 20px;
+    line-height: 1 !important;
+}
+
+div.rollresult:nth-child(1) {
+    margin-top: 0px !important;
+}
+
+
+/* The Smart way to do it*/
+.textchatcontainer .message.private:nth-of-type(n+1),
+div.message.rollresult:nth-child(n+1) {
+    padding-left: 49.5px;
+    margin-top: 20px;
+    margin-bottom: -19.5px;
+    padding-bottom: 21px;
+}
+
+div.message.general:nth-child(n+1) {
+    padding-left: 57px;
+    margin-top: 20px;
+    margin-bottom: -19.5px;
+    padding-bottom: 21px;
+}
+
+
+div.message.private.whisper div.avatar img,
+div.message.rollresult div.avatar img,
+div.message.general div.avatar img {
+    margin-left: 7px;
+}
+
+.textchatcontainer .rollresult.quantumRoll {
+    background: none;
+}
+/* End */
+[class="by"] {
+    visibility: hidden;
+    font-size: 0.000000000000000000000000000000000001em !important;
+}
+
+/* Hidden Rolls */
+.textchatcontainer .inlinerollresult {
+    border-radius: 7px;
+}
+
+/* Dice Roller */
+.sheet-darkmode.textchatcontainer .formula,
+.sheet-darkmode.textchatcontainer .rolled {
+    border-color: transparent;
+    padding: 6px;
+    border-radius: 7px;
+    box-decoration-break: clone;
+    background-color: var(--gnome-entry-background);
+}
+
+div.formula.formattedformula {
+    padding-top: 4px !important;
+    padding-bottom: 2px !important;
+    margin-right: 5px !important;
+}
+
+div.didroll {
+    padding-top: 6px !important;
+}
+
+div.dicegrouping.ui-sortable {
+    line-height: normal !important;
+}
+
+div.rolled.ui-draggable {
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+}
+
+div.message.rollresult > strong {
+    margin-bottom: 6px;
+    padding-bottom: 9px;
+    border-bottom-width: 0px;
+    border-bottom-style: solid;
+    width: 4px;
+    height: 20px;
+    display: inherit;
+    margin-left: 56px;
+    margin-top: -79px;
+    color: transparent;
+}
+
+div.message:nth-child(n) {
+    padding-left: 57px;
+}
+
+/* Zoom */
+.zoomplus {
+    height: 5px !important;
+    width: 5px !important;
+    padding: 18px !important;
+    padding-top: 23px !important;
+    scale: 0.6;
+    top: 9.5px !important;
+    border-radius: 7px;
+}
+
+button.btn:nth-child(4) {
+    height: 5px !important;
+    width: 5px !important;
+    padding: 18px !important;
+    padding-top: 24px !important;
+    scale: 0.6;
+    bottom: 9px !important;
+    border-radius: 7px;
+}
+
+.zoomplus::after,
+.zoomplus::before,
+.zoomminus::after,
+.zoomminus::before {
+    background-color: var(--dark-primarytext) !important;
+}
+
+.ui-slider-handle {
+    bottom: 0%;
+    display: none;
+}
+
+#zoomclick {
+    left: auto !important;
+    right: auto !important;
+    box-sizing: content-box;
+    scale: 0.84;
+    top: 196px !important;
+    margin-left: 16px;
+    height: 0px !important;
+    z-index: 999999 !important;
+}
+
+#zoomPercent {
+    display: none !important;
+}
+
+#zoomslider {
+    padding-left: 0px;
+    left: 0px;
+    padding-right: 0px;
+    width: 6px;
+    height: 0px;
+    margin-bottom: 10px;
+}
+
+/* Loading Screen Background */
+#loading-overlay {
+    background-color: var(--gnome-inactive-tabbar-tab-background);
+}
+
+/* Toolbar */
+#floatingtoolbar {
+    border-color: var(--gnome-tabbar-tab-active-background-contrast);
+    height: 102.067px;
+    padding-bottom: 188px !important;
+    background: var(--gnome-toolbar-background);
+    border: 1px solid var(--gnome-tabbar-tab-active-background-contrast);
+    border-radius: 12px;
+    box-shadow: var(--gnome-menu-shadow) !important;
+}
+
+#floatingtoolbar > ul:nth-child(1) {
+    height: 180.067px;
+}
+
+#floatingtoolbar div.submenu > ul {
+    box-shadow: var(--gnome-menu-shadow);
+    padding-top: 6px
+}
+
+#floatingtoolbar li {
+    color: var(--dark-secondarytext);
+    border-radius: 7px;
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-bottom: 3px;
+    height: 20px !important;
+}
+
+div.submenu:nth-child(n) {
+    left: 22px !important;
+}
+
+#floatingtoolbar li:hover {
+    background: var(--gnome-focused-urlbar-border-color);
+}
+
+#floatingtoolbar ul li#select.select:nth-of-type(1) {
+    margin-top: 3px;
+    height: 17.5px !important;
+}
+
+/**/
+#floatingtoolbar li:nth-of-type(1),
+#floatingtoolbar li:nth-of-type(3),
+#floatingtoolbar li:nth-of-type(6) {
+    text-align: unset;
+}
+
+#select > span:nth-child(1) {
+    margin-left: 8px;
+}
+
+[tip="Select/Move"] {
+    line-height: 15px !important;
+    font-size: 20px !important;
+}
+
+.currentselection {
+    margin-top: 3px !important;
+    position: relative !important;
+}
+
+#floatingtoolbar li:nth-of-type(2) {
+    font-size: 20px;
+}
+
+[class="activebutton path"],
+[class="path activebutton"],
+[class="path"],
+[class="text activebutton"],
+[class="activebutton text"],
+[class="text"] [class="polygon activebutton"],
+[class="polygon"],
+[class="activebutton polygon"],
+[class="activebutton rect"],
+[class="rect activebutton"],
+[class="rect"] {
+    line-height: 15px !important;
+}
+
+li#drawingtools.activebutton,
+li#drawingtools {
+    line-height: 17px !important;
+    padding-left: 0px !important;
+    font-size: 19px !important;
+}
+
+li#drawingtools span.pictostwo.currentselection span.pictostwo.subicon.fas.fa-circle {
+    scale: 0.76 !important;
+    margin-left: 2px;
+}
+
+li#drawingtools span.pictostwo.currentselection span.pictostwo.subicon {
+    margin-left: 3px;
+}
+
+li#measure svg.measure-icon.snap-corner {
+    margin-left: -1px;
+    margin-top: -4px;
+    scale: 0.85
+}
+
+li#measure svg.measure-icon.snap-none {
+    margin-top: -5px;
+}
+
+li#zoompanel span {
+    margin-left: 1px;
+}
+
+#floatingtoolbar li:nth-of-type(3) {
+    line-height: 18px;
+    font-size: 20px;
+}
+
+#ruler-flat-icon > path:nth-child(1) {
+    box-sizing: border-box !important;
+}
+
+svg.measure-icon:nth-child(1) {
+    margin-bottom: 5px !important;
+    margin-left: -1px;
+}
+
+#diceroller > span:nth-child(1) {
+    font-weight: bold;
+    font-size: 22px;
+    margin-left: -0.5px !important;
+}
+
+#helpsite > span:nth-child(1) {
+    box-sizing: revert;
+    position: absolute;
+    margin-left: -0.5px;
+    font-size: 21px;
+}
+
+/* Toolbar Popouts */
+.selZoom > li:nth-child(n) {
+    line-height: 19px !important;
+    padding-bottom: 0px !important;
+}
+
+#floatingtoolbar li.quickdice {
+    line-height: 17px;
+}
+
+#floatingtoolbar li.quickdice:hover .quickdice-label {
+    background-color: var(--gnome-accent);
+    border-radius: 3px;
+    line-height: 22px !important;
+}
+
+#floatingtoolbar li.quickdice .quickdice-button:hover,
+#floatingtoolbar li.quickdice .quickdice-toggle[data-toggle="true"]:nth-of-type(n+6) {
+    background-color: var(--gnome-accent);
+    border-radius: 3px;
+    line-height: 22px !important;
+}
+
+#floatingtoolbar li.quickdice .quickdice-label {
+    line-height: 22px !important;
+}
+
+#floatingtoolbar li.quickdice .quickdice-button,
+#floatingtoolbar li.quickdice .quickdice-toggle[data-toggle="true"]:nth-of-type(n+6) {
+    line-height: 22px !important;
+}
+
+#floatingtoolbar li.quickdice .quickdice-button:active,
+#floatingtoolbar li.quickdice .quickdice-toggle[data-toggle="true"]:nth-child(1) {
+    background-color: var(--gnome-accent);
+    border-radius: 21px 0px 0px 13px;
+}
+
+#floatingtoolbar li.quickdice .quickdice-button:hover,
+#floatingtoolbar li.quickdice .quickdice-toggle[data-toggle="true"] {
+    background-color: var(--gnome-accent);
+}
+
+#floatingtoolbar li.quickdice .quickdice-button:active,
+#floatingtoolbar li.quickdice .quickdice-toggle[data-toggle="true"]:nth-of-type(5) {
+    background-color: var(--gnome-accent);
+    border-radius: 0px 21px 13px 0px;
+}
+
+/* Measure Popout */
+#measure li.activerulermode,
+#fogcontrols li.activefogtoolshape,
+#fogcontrols li.activefogtool,
+#fogcontrols li.activefogtoolmode {
+    background-color: var(--gnome-accent);
+    color: #333;
+}
+
+#measure li.activerulermode:hover,
+#fogcontrols li.activefogtoolshape,
+#fogcontrols li.activefogtool,
+#fogcontrols li.activefogtoolmode {
+    background-color: var(--gnome-accent);
+    color: #333;
+}
+
+div.submenu:nth-child(4) > ul:nth-child(1) {
+    margin-bottom: 3px !important;
+}
+
+.choosepolygon {
+    margin-left: 3px;
+    padding-left: 6px;
+}
+
+.targettype {
+    top: 4px;
+}
+
+.dicetype {
+    top: 0px;
+}
+
+/* Zoom Popout */
+#zoompanel ul li.zoomClickBack {
+    background-color: var(--gnome-accent);
+    color: black;
+    border: 0px;
+}
+
+#floatingtoolbar div.submenu ul.selZoom {
+    line-height: 12px !important;
+    background: var(--dark-background) !important;
+    font-size: 13px !important;
+    text-align: left !important;
+    margin: 0px !important;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+
+
+
+
+/* UI Dialogues */
+.ui-dialog {
+    border-radius: 12px !important;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--gnome-tabbar-tab-active-background-contrast);
+    box-shadow: var(--gnome-menu-shadow) !important;
+}
+
+
+/* Toolbar Extra Toolbar */
+div#secondary-toolbar ul.mode.path.rect.polygon.ellipse li div.color_picker {
+    margin-right: 2px !important;
+    margin-left: 5px;
+    margin-top: 7px !important;
+}
+
+ul.mode:nth-child(2) > li:nth-child(2) > div:nth-child(2) {
+    margin-left: 2px !important;
+    
+}
+
+#secondary-toolbar {
+    border: 1px solid var(--gnome-tabbar-tab-active-background-contrast);
+    background-color: var(--gnome-toolbar-background) !important;
+    border-radius: 12px;
+}
+
+#secondary-toolbar li {
+    border-right: 1px solid var(--gnome-tabbar-tab-active-background-contrast);
+}
+
+#secondary-toolbar li:nth-of-type(3) {
+    border-right: 0px solid var(--gnome-tabbar-tab-active-background-contrast);
+}
+
+ul.mode.path.rect.polygon.ellipse li select#path_width:focus {
+    outline: 0px solid var(--gnome-focused-urlbar-border-color) !important;
+}
+
+
+/* Color Picker */
+div#color_selector {
+    background-color: var(--dark-surface2);
+    border-color: var(--gnome-tabbar-tab-active-background-contrast);
+    border-radius: 12px;
+}
+
+div.color_swatch {
+    border-radius: 5px;
+}
+
+div#color_custom label {
+    color: var(--dark-primarytext);
+    margin-bottom: -4px;
+    margin-left: 4px;
+    margin-top: 4px;
+}
+
+div#color_custom:hover {
+    border-color: transparent !important;
+    background-color: var(--gnome-entry-bg) !important;
+}
+
+div#color_custom input {
+    margin: 5px 2px;
+    font-size: 95%;
+    border: 0px solid #000;
+    width: 104px;
+    padding-left: 3px;
+    margin-bottom: 1px;
+    background: var(--gnome-entry-background);
+}
+
+/* Character Nameplates */
+.nameplate[data-v-fe91bfb6] {
+    background-color: var(--gnome-tab-button-hover-background);
+    font-size: 14px;
+    font-family: Rubik, sans-serif;
+    text-align: center;
+    font-weight: 500;
+    width: fit-content;
+    color: var(--dark-primarytext);
+    line-height: 20px;
+    white-space: nowrap;
+    border-radius: 5px;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.bar-background[data-v-2152d104] {
+    font-size: 15px;
+}
+}
