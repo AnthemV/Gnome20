@@ -1,1 +1,464 @@
+@-moz-document domain("") {
+/* ==UserStyle==
+@name           GnomeTube Music
+@namespace      https://music.youtube.com
+@description    A style for YouTube Music. Intended for use with a patched version of the Firefox GNOME Theme (coming soon), and the Progressive Web Apps for Firefox project.
+@author         AnthemV
+@version        1.0
+@license        Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
+@homepageURL    https://github.com/AnthemV/GNOME-CSS
+@supportURL     https://github.com/AnthemV/GNOME-CSS/issues
+@updateURL      https://github.com/AnthemV/GNOME-CSS/raw/main/GnomeTube-Music.user.styl
+==/UserStyle== */
+}
 
+@-moz-document url-prefix("http://example.com") {
+/* GNOME Colors */
+/* I have taken these directly from the Firefox Gnome Theme (https://github.com/rafaelmardojai/firefox-gnome-theme).*/
+
+
+/* Variables that start with --gnome- are added by me and are assigned
+ * to elements somewhere in this code. The rest of the variables are
+ * built-in in Firefox, so you need to add an !important if you wanna
+ * override them. */
+@media (prefers-color-scheme: dark) {
+	:root {
+		/* Browser area before a page starts loading */
+		--gnome-browser-before-load-background: #242424;
+		
+		/* Accent */
+		--gnome-accent-bg: #3584e4;
+		--gnome-accent: #78aeed;
+
+		/* Toolbars */
+		--gnome-toolbar-background: #242424;
+		--gnome-toolbar-color: #ffffff;
+		--gnome-toolbar-border-color: rgba(255, 255, 255, .15);
+		--gnome-toolbar-icon-fill: #eeeeec;
+		--gnome-inactive-toolbar-color: #919190;
+		--gnome-inactive-toolbar-background: var(--gnome-toolbar-background);
+		--gnome-inactive-toolbar-border-color: #3F3F3F;
+		--gnome-inactive-toolbar-icon-fill: #919190;
+
+		/* Sidebar */
+		--gnome-sidebar-background: var(--gnome-toolbar-background);
+		--gnome-inactive-sidebar-background: var(--gnome-sidebar-background);
+
+		/* Menus */
+		--gnome-menu-background: #383838;
+		--gnome-menu-border-color: rgba(0, 0, 0, .14);
+		--gnome-menu-shadow: 0 1px 5px 1px rgba(0,0,0, .09), 0 2px 14px 3px rgba(0,0,0, .05);
+		--gnome-menu-button-hover-background: var(--gnome-button-background);
+		--gnome-menu-separator-color: rgba(255, 255, 255, .1);
+
+		/* Header bar */
+		--gnome-headerbar-background: #303030;
+		--gnome-headerbar-border-color: var(--gnome-toolbar-border-color);
+		--gnome-inactive-headerbar-background: var(--gnome-inactive-toolbar-background);
+		--gnome-inactive-headerbar-border-color: var(--gnome-inactive-toolbar-border-color);
+
+		/* Buttons */
+		--gnome-button-background: rgba(255, 255, 255, .1);
+		--gnome-button-hover-background: rgba(255, 255, 255, .15);
+		--gnome-button-active-background: rgba(255, 255, 255, .3);
+		--gnome-button-flat-hover-background: rgba(255, 255, 255, .07);
+		--gnome-button-flat-active-background: rgba(255, 255, 255, .1);
+		--gnome-button-suggested-action-background: var(--gnome-accent-bg);
+		--gnome-button-destructive-action-background: #e01b24;
+
+		--gnome-button-close-background: var(--gnome-button-flat-hover-background);
+		--gnome-button-hover-close-background:var(--gnome-button-hover-background);
+		--gnome-button-active-close-background: var(--gnome-button-active-background);
+
+		/* Entries */
+		--gnome-entry-background: rgba(255, 255, 255, .1);
+		--gnome-entry-color: #ffffff;
+		--gnome-inactive-entry-color: #d6d6d6;
+		--gnome-focused-urlbar-border-color: rgba(120, 174, 237, .5); /* Same as --gnome-accent but with opacity*/
+
+		/* Switch */
+		--gnome-switch-background: rgba(255, 255, 255, .15);
+		--gnome-switch-slider-background: #d2d2d2;
+		--gnome-switch-active-background: var(--gnome-accent-bg);
+		--gnome-switch-active-slider-background: #ffffff;
+
+		/* Tabs */
+		--gnome-tabbar-tab-background: #262626;
+		--gnome-tabbar-tab-border-color: var(--gnome-toolbar-border-color);
+		--gnome-tabbar-tab-hover-background: #2D2D2D;
+		--gnome-tabbar-tab-active-background: #303030;
+		--gnome-tabbar-tab-active-background-contrast: #4F4F4F;
+		--gnome-tabbar-tab-active-hover-background: #363636;
+		--gnome-inactive-tabbar-tab-background: #1C1C1C;
+		--gnome-inactive-tabbar-tab-active-background: #242424;
+		--gnome-tab-button-background: rgba(0, 0, 0, .5);
+		--gnome-tab-button-hover-background: rgba(0, 0, 0, .6);
+		--gnome-tabbar-tab-identity-base-opacity: 0;
+	}
+
+	/* Private window colors */
+	:root {
+		--gnome-private-accent: #71A1DB;
+		
+		/* Toolbars */
+		--gnome-private-toolbar-background: #1C2438;
+		--gnome-private-inactive-toolbar-background: var(--gnome-private-toolbar-background);
+		/* Menus */
+		--gnome-private-menu-background: #252F49;
+		/* Header bar */
+		--gnome-private-headerbar-background: #252F49;
+		--gnome-private-inactive-headerbar-background: var(--gnome-private-toolbar-background);
+
+		/* Text color for Firefox Logo in new private tab */
+		--gnome-private-wordmark: #FBFBFE;
+
+		/* New private tab background */
+		--gnome-private-in-content-page-background: #1C2438;
+
+		/* Private browsing info box */
+		--gnome-private-text-primary-color: #FBFBFE;
+	}
+}
+}
+
+@-moz-document url-prefix("https://music.youtube.com") {
+html {
+--ytmusic-general-background-c: var(--gnome-headerbar-background) !important;
+--yt-spec-brand-background-solid: var(--gnome-headerbar-background) !important;
+--ytmusic-player-bar-background: var(--gnome-toolbar-background); 
+--ytmusic-nav-bar-height:40px;
+--default-border-radius:12px;
+    background:var(--gnome-browser-before-load-background);
+}
+
+/* /\\/\\/\\/\\/\\/\\/\\/\\/\\/\\ Colors /\/\/\/\/\/\/\/\/\/\ */
+#player-page {
+background: var(--gnome-toolbar-background);
+}
+
+div.ytmusic-app {
+background: var(--gnome-toolbar-background);
+}
+
+#contents.ytmusic-section-list-renderer {
+  background: var(--gnome-toolbar-background);
+} 
+
+#nav-bar-background.ytmusic-app-layout {
+  right: 0;
+  background: var(--ytmusic-nav-bar);
+  opacity: 1;
+  transition: opacity 0.2s;
+  will-change: opacity;
+    border-bottom-width: 1px;
+border-bottom-style: solid;
+    border-color: #1F1F1F
+}
+
+/* /\/\/\/\/\/\/\/\/\/\ Header Bar /\/\/\/\/\/\/\/\/\/\ */
+.settings-button {
+    right: 90px;
+    scale: 0.8;
+    padding-bottom: 1px;
+}
+
+.left-content.ytmusic-nav-bar {
+ scale:0.8;
+    margin-left: -10px
+}
+
+.center-content.ytmusic-nav-bar {
+    scale: 0.8
+}
+
+ytmusic-search-box.ytmusic-nav-bar {
+    margin-top: -11px;
+}
+
+/* /\/\/\/\/\/\/\/\/\/\ Profile Dropdown /\/\/\/\/\/\/\/\/\/\ */
+#contentWrapper {
+   box-shadow: var(--gnome-menu-shadow);
+    scale:0.95
+}
+
+tp-yt-iron-dropdown.style-scope.ytmusic-popup-container [class="style-scope ytmusic-popup-container"] {
+  margin-top: 0px;
+}
+
+a#endpoint.yt-simple-endpoint.style-scope.ytd-compact-link-renderer tp-yt-paper-icon-item[style-target="host"], a#endpoint.yt-simple-endpoint.style-scope.ytd-compact-link-renderer tp-yt-paper-item[style-target="host"] {
+    margin: 0px 7px 0px 7px;
+    height: 32px;
+}
+
+a#endpoint.yt-simple-endpoint.style-scope.ytd-compact-link-renderer tp-yt-paper-icon-item[style-target="host"], a#endpoint.yt-simple-endpoint.style-scope.ytd-compact-link-renderer tp-yt-paper-item[style-target="host"]:hover {
+background-color: var(--gnome-menu-button-hover-background);
+    margin: 0px 7px 0px 7px;
+    border-radius:6px
+}
+
+#items.yt-multi-page-menu-section-renderer > .yt-multi-page-menu-section-renderer:not([compact-link-style="compact-link-style-type-disclaimer"]).yt-multi-page-menu-section-renderer:not([component-style="RENDER_STYLE_SIMPLE_HEADER"]).yt-multi-page-menu-section-renderer:hover {
+  background-color: transparent !important;
+}
+
+
+/* Inline #5 | https://music.youtube.com/library/playlists */
+
+ytd-active-account-header-renderer {
+  /* background-color: var(--yt-spec-brand-background-primary); */
+  /* border-bottom: 1px solid var(--yt-spec-10-percent-layer); */
+  background-color: var(--gnome-menu-background);
+  border-bottom: 1px solid var(--gnome-menu-separator-color);
+  border-radius: 12px 12px 0px 0px;
+}
+
+#header.ytd-multi-page-menu-renderer {
+  border-radius: 12px;
+}
+
+ytd-multi-page-menu-renderer {
+  /* border: 1px solid var(--yt-spec-10-percent-layer); */
+  /* border-top: none; */
+  border: 1px solid var(--gnome-menu-border-color);
+  border-top: solid;
+}
+
+#channel-handle.ytd-active-account-header-renderer {
+  /* color: var(--yt-spec-text-primary); */
+  color: var(--ytmusic-text-secondary);
+  scale: 0.75;
+  margin-left: -26px;
+}
+
+#items.yt-multi-page-menu-section-renderer > .yt-multi-page-menu-section-renderer:not([compact-link-style="compact-link-style-type-disclaimer"]).yt-multi-page-menu-section-renderer:not([component-style="RENDER_STYLE_SIMPLE_HEADER"]).yt-multi-page-menu-section-renderer:hover {
+  /* background-color: var(--yt-spec-badge-chip-background); */
+  background-color: transparent;
+}
+
+#sections.ytd-multi-page-menu-renderer > .ytd-multi-page-menu-renderer:not(:last-child) {
+  /* border-bottom: 1px solid var(--yt-spec-10-percent-layer); */
+  border-bottom: 1px solid var(--gnome-menu-separator-color);
+}
+
+.menu-container.ytd-multi-page-menu-renderer {
+  background-color: var(--gnome-menu-background);
+}
+
+/* Element | https://music.youtube.com/ */
+
+ytd-multi-page-menu-renderer.style-scope {
+  /* border-top-width: 1px; */
+  border-color: var(--gnome-menu-border-color);
+  border-top-style: solid;
+  border-radius: 12px;
+}
+
+/* Element | https://music.youtube.com/ */
+
+#channel-handle {
+  margin-left: -26px;
+  margin-top: -4px;
+}
+
+/* Element | https://music.youtube.com/ */
+
+#channel-handle {
+  margin-left: -26px;
+}
+
+/* Element | https://music.youtube.com/ */
+
+yt-multi-page-menu-section-renderer.style-scope:nth-child(1) > div:nth-child(2) > ytd-compact-link-renderer:nth-child(1) > a:nth-child(1) > tp-yt-paper-item:nth-child(1) {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+/* /\/\/\/\/\/\/\/\/\/\ Small Border Radius /\/\/\/\/\/\/\/\/\/\ */
+ytd-multi-page-menu-renderer.style-scope.ytmusic-popup-container ytmusic-menu-renderer:not([enable-bauhaus-style]) #top-level-buttons.ytmusic-menu-renderer > .ytmusic-menu-renderer, .play-button.ytmusic-immersive-header-renderer, .radio-button.ytmusic-immersive-header-renderer, tp-yt-paper-button.ytmusic-subscribe-button-renderer {
+  gap: 16px;
+  border-radius: 8px;
+}
+
+
+/* /\/\/\/\/\/\/\/\/\/\ Medium Border Radius /\/\/\/\/\/\/\/\/\/\ */
+
+.song-media-controls, #main-panel, #player, ytmusic-info-panel-overview-view-model, yt-img-shadow.ytmusic-player > img:nth-child(1), yt-img-shadow[object-fit="COVER"] img.yt-img-shadow, #background.ytmusic-item-thumbnail-overlay-renderer, #content.ytmusic-item-thumbnail-overlay-renderer, .left-items.ytmusic-responsive-list-item-renderer, .left-items.ytmusic-player-queue-item, ytmusic-two-row-item-renderer[aspect-ratio="MUSIC_TWO_ROW_ITEM_THUMBNAIL_ASPECT_RATIO_SQUARE"] .image-wrapper.ytmusic-two-row-item-renderer, #contents.ytmusic-shelf-renderer > .ytmusic-shelf-renderer:not(:last-child) {
+  border-radius: var(--default-border-radius);
+}
+
+#contents.ytmusic-playlist-shelf-renderer > .ytmusic-playlist-shelf-renderer:not(:last-child) {
+  border-radius: var(--default-border-radius);
+    border-bottom:0px
+}
+
+/* /\/\/\/\/\/\/\/\/\/\ Large Border Radius /\/\/\/\/\/\/\/\/\/\ */
+#song-image.ytmusic-player {
+  border-radius: 25px !important;
+}
+
+/* /\/\/\/\/\/\/\/\/\/\ Album/Playlist Header Section /\/\/\/\/\/\/\/\/\/\ */
+.content-container.ytmusic-detail-header-renderer {
+        margin-bottom:15px;
+}
+
+/* /\/\/\/\/\/\/\/\/\/\ Scrolldown Attachment /\/\/\/\/\/\/\/\/\/\ */
+div.ytmusic-item-section-renderer:nth-child(2) {
+ box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 6px -3px;
+}
+
+/* Player Song List */
+ytmusic-player-queue.ytmusic-tab-renderer > div:nth-child(2) > ytmusic-player-queue-item:nth-child(n), ytmusic-player-queue-item[isautomix], ytmusic-responsive-list-item-renderer[height-style_="MUSIC_RESPONSIVE_LIST_ITEM_HEIGHT_MEDIUM"], ytmusic-player-queue-item {
+border-bottom-width: 0px;
+    margin-right:8px;
+    margin-left:8px;
+    border-radius:8px;
+        margin-top:2px;
+}
+
+ytmusic-player-queue.ytmusic-tab-renderer > div:nth-child(2) > ytmusic-player-queue-item:nth-child(n):hover, ytmusic-player-queue-item[isautomix]:hover, ytmusic-responsive-list-item-renderer[height-style_="MUSIC_RESPONSIVE_LIST_ITEM_HEIGHT_MEDIUM"]:hover, ytmusic-player-queue-item:hover {
+border-bottom-width: 0px;
+    margin-right:8px;
+    margin-left:8px;
+    border-radius:8px;
+      background: var(--gnome-button-flat-hover-background);
+}
+
+ytmusic-player-queue.ytmusic-tab-renderer > div:nth-child(2) > ytmusic-player-queue-item:nth-child(1) {
+    margin-top: 8px;
+}
+
+html {
+    --ytmusic-list-item-height:52px
+}
+
+div.side-panel:nth-child(3) {
+margin-top: 3px;
+margin-top: 18px;
+}
+
+yt-icon.yt-checkbox-renderer, .duration.ytmusic-player-queue-item, .fixed-column.ytmusic-responsive-list-item-renderer[size="MUSIC_RESPONSIVE_LIST_ITEM_FIXED_COLUMN_SIZE_SMALL"] {
+margin-right: 10px;
+}
+
+/* Radio Quick Picks */
+div.ytmusic-shelf.style-scope.ytmusic-carousel-shelf-renderer ytmusic-responsive-list-item-renderer.style-scope:nth-child(n) {
+margin-bottom: 1px !important;
+padding-bottom: 8px;
+padding-top: 8px;
+margin-top: 1px;
+    border-radius:var(--default-border-radius);
+        border-top:0px;
+}
+
+ytmusic-responsive-list-item-renderer.style-scope:nth-child(n) {
+border-bottom-width: 0px !important;
+}
+
+ytmusic-responsive-list-item-renderer.style-scope:nth-child(n):hover {
+background:var(--gnome-button-flat-hover-background);
+}
+
+div.ytmusic-shelf.style-scope.ytmusic-carousel-shelf-renderer ytmusic-responsive-list-item-renderer.style-scope:nth-child(1), div.ytmusic-shelf.style-scope.ytmusic-carousel-shelf-renderer ytmusic-responsive-list-item-renderer.style-scope:nth-child(2), div.ytmusic-shelf.style-scope.ytmusic-carousel-shelf-renderer ytmusic-responsive-list-item-renderer.style-scope:nth-child(3), div.ytmusic-shelf.style-scope.ytmusic-carousel-shelf-renderer ytmusic-responsive-list-item-renderer.style-scope:nth-child(4), div.ytmusic-shelf.style-scope.ytmusic-carousel-shelf-renderer ytmusic-responsive-list-item-renderer.style-scope:nth-child(5) {
+margin-left: 48px !important;
+padding-left: 8px !important;
+}
+
+ytmusic-carousel-shelf-renderer.style-scope:nth-child(2) > div:nth-child(1) > ytmusic-carousel:nth-child(2) > div:nth-child(1) > ul:nth-child(1) {
+height: calc(var(--ytmusic-carousel-num-items-per-column) * var(--ytmusic-carousel-item-height) + var(--ytmusic-carousel-item-margin-bottom) * (var(--ytmusic-carousel-num-items-per-column) + 1)) !important;
+}
+
+/* Right Click Menu */
+tp-yt-paper-listbox.ytmusic-menu-popup-renderer {
+  padding-top: 8px;
+  padding-bottom: 7px;
+  border: 1px solid var(--gnome-menu-border-color);
+  --paper-listbox-background-color: var(--gnome-menu-background);
+  box-shadow: var(--gnome-menu-shadow);
+  border-radius: 12px;
+  width: 265px;
+}
+
+#items.ytmusic-menu-popup-renderer > .ytmusic-menu-popup-renderer {
+    margin: 0px 7px 0px 7px;
+    height: 32px;
+}
+
+#items.ytmusic-menu-popup-renderer > .ytmusic-menu-popup-renderer:hover {
+background-color: var(--gnome-menu-button-hover-background);
+    margin: 0px 7px 0px 7px;
+    border-radius:6px
+}
+
+.yt-simple-endpoint.ytmusic-menu-navigation-item-renderer {
+  height: 32px;
+}
+
+.text.ytmusic-menu-navigation-item-renderer, .text.ytmusic-menu-service-item-renderer, .text.ytmusic-toggle-menu-service-item-renderer {
+padding-bottom:1px
+}
+
+.icon.ytmusic-menu-navigation-item-renderer, .icon.ytmusic-menu-service-item-renderer, .icon.ytmusic-toggle-menu-service-item-renderer {
+    scale:0.9;
+}
+
+/* Other Dropdown */
+#dropdown-items {
+  padding-top: 3px;
+  padding-bottom: 6px;
+  border: 1px solid var(--gnome-menu-border-color);
+}
+
+div.dropdown-content {
+border-radius: 12px !important;
+}
+
+.dropdown-content.ytmusic-dropdown-renderer {
+  --paper-listbox-background-color: var(--gnome-menu-background);
+  border-radius: 12px;
+}
+
+tp-yt-iron-dropdown.tp-yt-paper-menu-button {
+  border-radius: 12px;
+}
+
+ytmusic-dropdown-item-renderer[is-selected] {
+  background-color: var(--gnome-button-flat-hover-background);
+}
+
+ytmusic-dropdown-item-renderer:hover {
+  background-color: var(--gnome-menu-button-hover-background);
+}
+
+#dropdown > div:nth-child(1) {
+  border-radius: 12px;
+  box-shadow: none;
+}
+
+ytmusic-dropdown-item-renderer.style-scope:nth-child(n) {
+  margin-left: 6px !important;
+  margin-right: 6px !important;
+  margin-top: 2px !important;
+  height: 32px !important;
+  border-radius: 6px !important;
+}
+
+/* Lyrics */
+.non-expandable {
+padding-left: 18px !important;
+}
+
+/* Related Section */
+ytmusic-section-list-renderer.style-scope:nth-child(4) > div:nth-child(2) > ytmusic-carousel-shelf-renderer:nth-child(1) > div:nth-child(1) > ytmusic-carousel:nth-child(2) > div:nth-child(1) > ul:nth-child(1) {
+height: calc(var(--ytmusic-carousel-num-items-per-column) * var(--ytmusic-carousel-item-height) + var(--ytmusic-carousel-item-margin-bottom) * (var(--ytmusic-carousel-num-items-per-column) + 1)) !important;
+margin-left: 0px;
+width: 200%!important;
+left: -40px;
+}
+
+
+
+
+
+
+
+
+}
