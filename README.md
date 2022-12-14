@@ -36,5 +36,5 @@ Currently in progress. A basic style for YouTube Music. Intended for use with a 
  <p align="left">
   </a>
   <br/>
-  <img src="Screenshots/Screenshot from 2022-12-09 16-53-52.png" width="100%" style="max-width: 100%;"/>
+  <img src="Screenshots/GnomeTube Music.png" width="100%" style="max-width: 100%;"/>
 </p>
