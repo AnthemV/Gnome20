@@ -3,7 +3,7 @@
 @namespace       https://app.roll20.net/editor
 @description    If you have to use Roll20, at least make it look nice!
 @author         AnthemV
-@version        1.2.4
+@version        1.2.5
 @license        Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
 @homepageURL    https://github.com/AnthemV/GNOME-CSS
 @supportURL     https://github.com/AnthemV/GNOME-CSS/issues
@@ -319,6 +319,7 @@ div#textchat-input div select#speakingas.selectize {
     background: var(--gnome-entry-background);
     border: 0px solid var(--gnome-tabbar-tab-active-background-contrast);
     border-radius: 12px;
+    width: 223px;
 }
 
 #textchat-input button {
@@ -328,7 +329,18 @@ div#textchat-input div select#speakingas.selectize {
 
 #textchat-input > div:nth-child(5) > label:nth-child(1) {
     margin-top: 6px !important;
-    margin-left: 1px;
+}
+
+#textchat-input > div:nth-child(5) {
+width: 311px !important;
+}
+
+#chatSendBtn {
+height: 16px !important;
+margin-top: 0px !important;
+padding-top: 5px !important;
+padding-bottom: 7px !important;
+    margin-left: 5px !important;
 }
 
 div#textchat-input textarea.ui-autocomplete-input:focus,
@@ -1319,5 +1331,59 @@ margin-top: -4px;
 padding-bottom: 4px;
 padding-top: 1.5px;
 }
+
+/* Initative */ 
+li.token:nth-child(n) {
+border-bottom-width: 0px !important;
+margin-bottom: 2px !important;
+margin-right: 0px !important;
+margin-top: 0px !important;
+border-radius: 6px !important;
+        padding-bottom: 3px !important;
+}
+
+#initiativewindow ul li:first-child {
+background-color: var(--gnome-button-background);
+}
+
+/* editorDarkMode.css | https://app.roll20.net/assets/editorDarkMode.css */
+
+#initiativewindow ul li:first-child {
+  /* background-color: var(--dark-green-d60); */
+  background-color: var(--gnome-button-background);
+}
+
+#initiativewindow ul li {
+  /* background-color: var(--dark-gray-disabled); */
+  background-color: var(--gnome-headerbar-background);
+}
+
+/* Element | https://app.roll20.net/editor/ */
+
+.ui-dialog-titlebar {
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+
+/* Element | https://app.roll20.net/editor/ */
+
+li.token:nth-child(n) > span:nth-child(3) {
+  padding-left: 5px;
+    padding-top: 0px !important;
+    padding-bottom: 2px
+    
+}
+
+/* Element | https://app.roll20.net/editor/ */
+
+li.token:nth-child(n) > img:nth-child(n) {
+  padding-top: 1px;
+}
+
+#initiativewindow {
+    scrollbar-width: none;
+}
+
+
 
 }
