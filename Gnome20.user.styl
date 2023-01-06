@@ -3,7 +3,7 @@
 @namespace       https://app.roll20.net/editor
 @description    If you have to use Roll20, at least make it look nice!
 @author         AnthemV
-@version        1.2.5.4
+@version        1.2.5.5
 @license        Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
 @homepageURL    https://github.com/AnthemV/GNOME-CSS
 @supportURL     https://github.com/AnthemV/GNOME-CSS/issues
@@ -1336,14 +1336,18 @@ padding-top: 1.5px;
 li.token:nth-child(n) {
 border-bottom-width: 0px !important;
 margin-bottom: 2px !important;
-margin-right: 0px !important;
 margin-top: 0px !important;
 border-radius: 6px !important;
         padding-bottom: 3px !important;
+    margin-left: auto !important;
+margin-right: auto !important;
+    width: clamp(136px, calc(100% - 10px),  450px);
 }
 
 #initiativewindow ul li:first-child {
 background-color: var(--gnome-button-background);
+    width: clamp(136px, calc(100% - 10px),  450px);
+    
 }
 
 /* editorDarkMode.css | https://app.roll20.net/assets/editorDarkMode.css */
@@ -1368,9 +1372,9 @@ background-color: var(--gnome-button-background);
 /* Element | https://app.roll20.net/editor/ */
 
 li.token:nth-child(n) > span:nth-child(3) {
-  padding-left: 5px;
+  padding-left: 5px !important;
     padding-top: 0px !important;
-    padding-bottom: 2px
+    padding-bottom: 2px !important;
     
 }
 
