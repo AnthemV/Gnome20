@@ -1,16 +1,9 @@
-# GNOME-CSS
-A collection of userstyles to theme various websites in the GNOME Libadwaita style. 
+# Gnome20
+Roll20's UI looks like it was developed by drunk sheep, and I felt the need to fix that. Only works when Roll20 is set to dark mode, because the site uses two different stylesheets for some reason. The theme is based on [Libadwaita](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/), and incorprates aspects of the [Gnome Human Interface Guidelines](https://developer.gnome.org/hig/). 
 
-## Usage
-Install the browser extention Stylus ([Firefox.](https://addons.mozilla.org/en-US/firefox/addon/styl-us/) [Chrome.](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne)), then click the "Install directly with Stylus" buttons.
+### Usage
+Install the browser extention _Stylus_ ([Firefox](https://addons.mozilla.org/en-US/firefox/addon/styl-us/), [Chrome](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne)), then click the "Install directly with Stylus" button.
 
-
-
-
-
-
-## Gnome20
-A full style for Roll20, including a great deal of tweaking and polish in order to fix up the terrible default appearence. Only works when Roll20 is set to dark mode, because the site uses two different stylesheets for its themes for some reason. Currently doesn't support DM view properly, and has only been tested with Pathfinder.
 <p align="left">
   <a target="_blank" rel="noopener noreferrer" href="https://github.com/AnthemV/GNOME-CSS/raw/main/Gnome20.user.styl">
     <img src="https://img.shields.io/badge/Install%20directly%20with-Stylus-116b59.svg?longCache=true&style=flat"/>
@@ -24,17 +17,3 @@ A full style for Roll20, including a great deal of tweaking and polish in order 
 </p>
 
 
-## GnomeTube Music 
-Currently in progress. A basic style for YouTube Music. Intended for use with a patched version of the [Firefox GNOME Theme](https://github.com/rafaelmardojai/firefox-gnome-theme) (coming soon), and the [Progressive Web Apps for Firefox](https://github.com/filips123/PWAsForFirefox) project. 
-
-<p align="left">
-  <a target="_blank" rel="noopener noreferrer" href="https://github.com/AnthemV/GNOME-CSS/raw/main/GnomeTube-Music.user.styl">
-    <img src="https://img.shields.io/badge/Install%20directly%20with-Stylus-116b59.svg?longCache=true&style=flat"/>
-  </a>
- </p>
- 
- <p align="left">
-  </a>
-  <br/>
-  <img src="Screenshots/GnomeTube Music.png" width="100%" style="max-width: 100%;"/>
-</p>
