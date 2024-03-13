@@ -1,5 +1,5 @@
 # Gnome20
-Roll20's UI looks like it was developed by drunk sheep, and I felt the need to fix that. Only works when Roll20 is set to dark mode, because the site uses two different stylesheets for some reason. The theme is based on [Libadwaita](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/), and incorprates aspects of the [Gnome Human Interface Guidelines](https://developer.gnome.org/hig/). 
+Roll20's UI looks like it was developed by drunk sheep, and I felt the need to fix that. Only works when Roll20 is set to dark mode, because the site uses two different stylesheets for some reason. The theme is based on the design language of [Libadwaita](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/), and incorprates aspects of the [Gnome Human Interface Guidelines](https://developer.gnome.org/hig/). 
 
 ### Usage
 Install the browser extention _Stylus_ ([Firefox](https://addons.mozilla.org/en-US/firefox/addon/styl-us/), [Chrome](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne)), then click the "Install directly with Stylus" button.
