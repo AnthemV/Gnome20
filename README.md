@@ -5,7 +5,7 @@ Roll20's UI looks like it was developed by drunk sheep, and I felt the need to f
 Install the browser extention _Stylus_ ([Firefox](https://addons.mozilla.org/en-US/firefox/addon/styl-us/), [Chrome](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne)), then click the "Install directly with Stylus" button.
 
 <p align="left">
-  <a target="_blank" rel="noopener noreferrer" href="https://github.com/AnthemV/GNOME-CSS/raw/main/Gnome20.user.styl">
+  <a target="_blank" rel="noopener noreferrer" href="https://github.com/AnthemV/Gnome20/raw/main/Gnome20.user.styl">
     <img src="https://img.shields.io/badge/Install%20directly%20with-Stylus-116b59.svg?longCache=true&style=flat"/>
   </a>
  </p>
