@@ -1,9 +1,9 @@
-/* ==UserStyle==
+/* Info
 @name           Gnome20
-@namespace       https://app.roll20.net/editor
+@namespace      https://app.roll20.net/editor
 @description    If you have to use Roll20, at least make it look nice!
 @author         AnthemV
-@version        1.2.5.5
+@version        1.9.9.9
 @license        Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
 @homepageURL    https://github.com/AnthemV/GNOME-CSS
 @supportURL     https://github.com/AnthemV/GNOME-CSS/issues
@@ -12,119 +12,279 @@
 
 @-moz-document url-prefix("https://app.roll20.net/editor") {
 /* Firefox Gnome Theme Colors */
-/* I have taken these directly from Firefox Gnome Theme (https://github.com/rafaelmardojai/firefox-gnome-theme).*/
-    :root {
-		/* Browser area before a page starts loading */
-		--gnome-browser-before-load-background: #242424;
-		
-		/* Accent */
-		--gnome-accent-bg: #3584e4;
-		--gnome-accent: #78aeed;
+/* Taken these directly from Firefox Gnome Theme (https://github.com/rafaelmardojai/firefox-gnome-theme).*/
+:root {
+    /* Browser area before a page starts loading */
+    --gnome-browser-before-load-background: #242424;
 
-		/* Toolbars */
-		--gnome-toolbar-background: #242424;
-		--gnome-toolbar-color: #ffffff;
-		--gnome-toolbar-border-color: rgba(255, 255, 255, .15);
-		--gnome-toolbar-icon-fill: #eeeeec;
-		--gnome-inactive-toolbar-color: #919190;
-		--gnome-inactive-toolbar-background: var(--gnome-toolbar-background);
-		--gnome-inactive-toolbar-border-color: #3F3F3F;
-		--gnome-inactive-toolbar-icon-fill: #919190;
+    /* Accent */
+    --gnome-accent-bg: #3584e4;
+    --gnome-accent: #78aeed;
 
-		/* Sidebar */
-		--gnome-sidebar-background: var(--gnome-toolbar-background);
-		--gnome-inactive-sidebar-background: var(--gnome-sidebar-background);
+    /* Toolbars */
+    --gnome-toolbar-background: #242424;
+    --gnome-toolbar-color: #ffffff;
+    --gnome-toolbar-border-color: rgba(255, 255, 255, .15);
+    --gnome-toolbar-icon-fill: #eeeeec;
+    --gnome-inactive-toolbar-color: #919190;
+    --gnome-inactive-toolbar-background: var(--gnome-toolbar-background);
+    --gnome-inactive-toolbar-border-color: #3F3F3F;
+    --gnome-inactive-toolbar-icon-fill: #919190;
 
-		/* Menus */
-		--gnome-menu-background: #383838;
-		--gnome-menu-border-color: rgba(0, 0, 0, .14);
-		--gnome-menu-shadow: 0 1px 5px 1px rgba(0,0,0, .09), 0 2px 14px 3px rgba(0,0,0, .05);
-		--gnome-menu-button-hover-background: var(--gnome-button-background);
-		--gnome-menu-separator-color: rgba(255, 255, 255, .1);
+    /* Sidebar */
+    --gnome-sidebar-background: var(--gnome-toolbar-background);
+    --gnome-inactive-sidebar-background: var(--gnome-sidebar-background);
 
-		/* Header bar */
-		--gnome-headerbar-background: #303030;
-		--gnome-headerbar-border-color: var(--gnome-toolbar-border-color);
-		--gnome-inactive-headerbar-background: var(--gnome-inactive-toolbar-background);
-		--gnome-inactive-headerbar-border-color: var(--gnome-inactive-toolbar-border-color);
+    /* Menus */
+    --gnome-menu-background: #383838;
+    --gnome-menu-border-color: rgba(0, 0, 0, .14);
+    --gnome-menu-shadow: 0 1px 5px 1px rgba(0, 0, 0, .09), 0 2px 14px 3px rgba(0, 0, 0, .05);
+    --gnome-menu-button-hover-background: var(--gnome-button-background);
+    --gnome-menu-separator-color: rgba(255, 255, 255, .1);
 
-		/* Buttons */
-		--gnome-button-background: rgba(255, 255, 255, .1);
-		--gnome-button-hover-background: rgba(255, 255, 255, .15);
-		--gnome-button-active-background: rgba(255, 255, 255, .3);
-		--gnome-button-flat-hover-background: rgba(255, 255, 255, .07);
-		--gnome-button-flat-active-background: rgba(255, 255, 255, .1);
-		--gnome-button-suggested-action-background: var(--gnome-accent-bg);
-		--gnome-button-destructive-action-background: #e01b24;
+    /* Header bar */
+    --gnome-headerbar-background: #303030;
+    --gnome-headerbar-border-color: var(--gnome-toolbar-border-color);
+    --gnome-inactive-headerbar-background: var(--gnome-inactive-toolbar-background);
+    --gnome-inactive-headerbar-border-color: var(--gnome-inactive-toolbar-border-color);
 
-		--gnome-button-close-background: var(--gnome-button-flat-hover-background);
-		--gnome-button-hover-close-background:var(--gnome-button-hover-background);
-		--gnome-button-active-close-background: var(--gnome-button-active-background);
+    /* Buttons */
+    --gnome-button-background: rgba(255, 255, 255, .1);
+    --gnome-button-hover-background: rgba(255, 255, 255, .15);
+    --gnome-button-active-background: rgba(255, 255, 255, .3);
+    --gnome-button-flat-hover-background: rgba(255, 255, 255, .07);
+    --gnome-button-flat-active-background: rgba(255, 255, 255, .1);
+    --gnome-button-suggested-action-background: var(--gnome-accent-bg);
+    --gnome-button-destructive-action-background: #e01b24;
 
-		/* Entries */
-		--gnome-entry-background: rgba(255, 255, 255, .1);
-		--gnome-entry-color: #ffffff;
-		--gnome-inactive-entry-color: #d6d6d6;
-		--gnome-focused-urlbar-border-color: rgba(120, 174, 237, .5); /* Same as --gnome-accent but with opacity*/
+    --gnome-button-close-background: var(--gnome-button-flat-hover-background);
+    --gnome-button-hover-close-background: var(--gnome-button-hover-background);
+    --gnome-button-active-close-background: var(--gnome-button-active-background);
 
-		/* Switch */
-		--gnome-switch-background: rgba(255, 255, 255, .15);
-		--gnome-switch-slider-background: #d2d2d2;
-		--gnome-switch-active-background: var(--gnome-accent-bg);
-		--gnome-switch-active-slider-background: #ffffff;
+    /* Entries */
+    --gnome-entry-background: rgba(255, 255, 255, .1);
+    --gnome-entry-color: #ffffff;
+    --gnome-inactive-entry-color: #d6d6d6;
+    --gnome-focused-urlbar-border-color: rgba(120, 174, 237, .5);
+    /* Same as --gnome-accent but with opacity*/
+    /* Switch */
+    --gnome-switch-background: rgba(255, 255, 255, .15);
+    --gnome-switch-slider-background: #d2d2d2;
+    --gnome-switch-active-background: var(--gnome-accent-bg);
+    --gnome-switch-active-slider-background: #ffffff;
 
-		/* Tabs */
-		--gnome-tabbar-tab-background: #262626;
-		--gnome-tabbar-tab-border-color: var(--gnome-toolbar-border-color);
-		--gnome-tabbar-tab-hover-background: #2D2D2D;
-		--gnome-tabbar-tab-active-background: #303030;
-		--gnome-tabbar-tab-active-background-contrast: #4F4F4F;
-		--gnome-tabbar-tab-active-hover-background: #363636;
-		--gnome-inactive-tabbar-tab-background: #1C1C1C;
-		--gnome-inactive-tabbar-tab-active-background: #242424;
-		--gnome-tab-button-background: rgba(0, 0, 0, .5);
-		--gnome-tab-button-hover-background: rgba(0, 0, 0, .6);
-		--gnome-tabbar-tab-identity-base-opacity: 0;
-	}
+    /* Tabs */
+    --gnome-tabbar-tab-background: #262626;
+    --gnome-tabbar-tab-border-color: var(--gnome-toolbar-border-color);
+    --gnome-tabbar-tab-hover-background: #2D2D2D;
+    --gnome-tabbar-tab-active-background: #303030;
+    --gnome-tabbar-tab-active-background-contrast: #4F4F4F;
+    --gnome-tabbar-tab-active-hover-background: #363636;
+    --gnome-inactive-tabbar-tab-background: #1C1C1C;
+    --gnome-inactive-tabbar-tab-active-background: #242424;
+    --gnome-tab-button-background: rgba(0, 0, 0, .5);
+    --gnome-tab-button-hover-background: rgba(0, 0, 0, .6);
+    --gnome-tabbar-tab-identity-base-opacity: 0;
+}
 
-	/* Private window colors */
-	:root {
-		--gnome-private-accent: #71A1DB;
-		
-		/* Toolbars */
-		--gnome-private-toolbar-background: #1C2438;
-		--gnome-private-inactive-toolbar-background: var(--gnome-private-toolbar-background);
-		/* Menus */
-		--gnome-private-menu-background: #252F49;
-		/* Header bar */
-		--gnome-private-headerbar-background: #252F49;
-		--gnome-private-inactive-headerbar-background: var(--gnome-private-toolbar-background);
+/* Private window colors */
+:root {
+    --gnome-private-accent: #71A1DB;
 
-		/* Text color for Firefox Logo in new private tab */
-		--gnome-private-wordmark: #FBFBFE;
+    /* Toolbars */
+    --gnome-private-toolbar-background: #1C2438;
+    --gnome-private-inactive-toolbar-background: var(--gnome-private-toolbar-background);
+    /* Menus */
+    --gnome-private-menu-background: #252F49;
+    /* Header bar */
+    --gnome-private-headerbar-background: #252F49;
+    --gnome-private-inactive-headerbar-background: var(--gnome-private-toolbar-background);
 
-		/* New private tab background */
-		--gnome-private-in-content-page-background: #1C2438;
+    /* Text color for Firefox Logo in new private tab */
+    --gnome-private-wordmark: #FBFBFE;
 
-		/* Private browsing info box */
-		--gnome-private-text-primary-color: #FBFBFE;
-	}
+    /* New private tab background */
+    --gnome-private-in-content-page-background: #1C2438;
+
+    /* Private browsing info box */
+    --gnome-private-text-primary-color: #FBFBFE;
+}
 }
 
 @-moz-document url-prefix("https://app.roll20.net/editor") {
-/* Gnome20 */
-/* Color Variables */
+/* Updated Color CSS */
+/* Taken these directly from Firefox Gnome Theme (https://github.com/rafaelmardojai/firefox-gnome-theme). I had to take them from the light mode because the dark theme doesn't include all the color palletes, so I've selectively removed the light colors that caused issues */
 :root {
-    --dark-primary: var(--gnome-accent-bg);
-    --dark-primary-highlight: var(--gnome-accent);
-    --dark-surface1: var(--gnome-sidebar-background);
-    --dark-surface2: var(--gnome-sidebar-background);
+    /* Pallete */
+    --gnome-palette-blue-1: #99c1f1;
+    --gnome-palette-blue-2: #62a0ea;
+    --gnome-palette-blue-3: #3584e4;
+    --gnome-palette-blue-4: #1c71d8;
+    --gnome-palette-blue-5: #1a5fb4;
+    --gnome-palette-green-1: #8ff0a4;
+    --gnome-palette-green-2: #57e389;
+    --gnome-palette-green-3: #33d17a;
+    --gnome-palette-green-4: #2ec27e;
+    --gnome-palette-green-5: #26a269;
+    --gnome-palette-yellow-1: #f9f06b;
+    --gnome-palette-yellow-2: #f8e45c;
+    --gnome-palette-yellow-3: #f6d32d;
+    --gnome-palette-yellow-4: #f5c211;
+    --gnome-palette-yellow-5: #e5a50a;
+    --gnome-palette-orange-1: #ffbe6f;
+    --gnome-palette-orange-2: #ffa348;
+    --gnome-palette-orange-3: #ff7800;
+    --gnome-palette-orange-4: #e66100;
+    --gnome-palette-orange-5: #c64600;
+    --gnome-palette-red-1: #f66151;
+    --gnome-palette-red-2: #ed333b;
+    --gnome-palette-red-3: #e01b24;
+    --gnome-palette-red-4: #c01c28;
+    --gnome-palette-red-5: #a51d2d;
+    --gnome-palette-purple-1: #dc8add;
+    --gnome-palette-purple-2: #c061cb;
+    --gnome-palette-purple-3: #9141ac;
+    --gnome-palette-purple-4: #813d9c;
+    --gnome-palette-purple-5: #613583;
+    --gnome-palette-brown-1: #cdab8f;
+    --gnome-palette-brown-2: #b5835a;
+    --gnome-palette-brown-3: #986a44;
+    --gnome-palette-brown-4: #865e3c;
+    --gnome-palette-brown-5: #63452c;
+    --gnome-palette-light-1: #ffffff;
+    --gnome-palette-light-2: #f6f5f4;
+    --gnome-palette-light-3: #deddda;
+    --gnome-palette-light-4: #c0bfbc;
+    --gnome-palette-light-5: #9a9996;
+    --gnome-palette-dark-1: #77767b;
+    --gnome-palette-dark-2: #5e5c64;
+    --gnome-palette-dark-3: #3d3846;
+    --gnome-palette-dark-4: #241f31;
+    --gnome-palette-dark-5: #000000;
+
+    /* Accent */
+    --gnome-accent-bg: var(--gnome-palette-blue-3);
+    --gnome-accent: var(--gnome-palette-blue-1);
+
+    --gnome-selection-bg: color-mix(in srgb, var(--gnome-accent-bg) 30%, transparent);
+    --gnome-toolbar-star-button: var(--gnome-palette-yellow-5);
+
+    /* Window */
+    --gnome-window-color: rgba(0, 0, 0, 0.8);
+
+    --gnome-view-color: var(--gnome-window-color);
+    --gnome-view-selected-background: color-mix(in srgb, var(--gnome-accent-bg) 25%, transparent);
+    --gnome-view-selected-hover-background: color-mix(in srgb, var(--gnome-accent-bg) 32%, transparent);
+    --gnome-view-selected-active-background: color-mix(in srgb, var(--gnome-accent-bg) 39%, transparent);
+
+    /* Card */
+    --gnome-card-shade-color: color-mix(in srgb, black 7%, transparent);
+
+    /* Menu */
+    --gnome-menu-color: var(--gnome-window-color);
+    --gnome-menu-border-color: rgba(0, 0, 0, .04);
+    --gnome-menu-shadow: 0 1px 5px 1px rgba(0, 0, 0, .09), 0 2px 14px 3px rgba(0, 0, 0, .05);
+    --gnome-menu-button-hover-background: var(--gnome-button-background);
+    --gnome-menu-separator-color: var(--gnome-border-color);
+
+    /* Header bar */
+    --gnome-headerbar-shade-color: rgba(0, 0, 0, 0.07);
+
+    /* Toolbars */
+    --gnome-toolbar-background: var(--gnome-headerbar-background);
+    --gnome-toolbar-color: var(--gnome-window-color);
+    --gnome-toolbar-border-color: var(--gnome-headerbar-shade-color);
+    --gnome-toolbar-icon-fill: #2f2f2f;
+
+    /* Elements */
+    --gnome-border-color: color-mix(in srgb, currentColor 15%, transparent);
+    --gnome-hover-color: color-mix(in srgb, currentColor 7%, transparent);
+    --gnome-active-color: color-mix(in srgb, currentColor 16%, transparent);
+    --gnome-selected-color: color-mix(in srgb, currentColor 10%, transparent);
+    --gnome-selected-hover-color: color-mix(in srgb, currentColor 13%, transparent);
+    --gnome-selected-active-color: color-mix(in srgb, currentColor 19%, transparent);
+    --gnome-trough-background: color-mix(in srgb, currentColor 15%, transparent);
+    --gnome-trough-hover-background: color-mix(in srgb, currentColor 20%, transparent);
+    --gnome-trough-active-background: color-mix(in srgb, currentColor 25%, transparent);
+
+    /* Buttons */
+    --gnome-button-background: color-mix(in srgb, currentColor 10%, transparent);
+    --gnome-button-hover-background: color-mix(in srgb, currentColor 15%, transparent);
+    --gnome-button-active-background: color-mix(in srgb, currentColor 30%, transparent);
+    --gnome-button-suggested-action-background: var(--gnome-accent-bg);
+    --gnome-button-destructive-action-background: #e01b24;
+
+    /* Entries */
+    --gnome-entry-background: var(--gnome-button-background);
+    --gnome-entry-color: var(--gnome-view-color);
+    --gnome-focused-urlbar-border-color: color-mix(in srgb, var(--gnome-accent) 50%, transparent);
+
+    /* Tabs */
+    --gnome-tabbar-background: var(--gnome-headerbar-background);
+    --gnome-tabbar-tab-separator-color: var(--gnome-border-color);
+
+    --gnome-tabbar-tab-needs-attetion: var(--gnome-accent);
+
+    --gnome-tabbar-identity-color-blue: var(--gnome-accent);
+    --gnome-tabbar-identity-color-turquoise: #00c79a;
+    --gnome-tabbar-identity-color-green: var(--gnome-palette-green-5);
+    --gnome-tabbar-identity-color-yellow: #ae7b03;
+    --gnome-tabbar-identity-color-orange: var(--gnome-palette-orange-4);
+    --gnome-tabbar-identity-color-red: var(--gnome-palette-red-3);
+    --gnome-tabbar-identity-color-pink: #ff4b84;
+    --gnome-tabbar-identity-color-purple: var(--gnome-palette-purple-4);
+
+    /* Text color for Firefox Logo in new private tab */
+    --gnome-private-wordmark: #20123A;
+    /* New private tab background */
+    --gnome-private-in-content-page-background: #FAFAFA;
+    /* Private browsing info box */
+    --gnome-private-text-primary-color: #15141A;
+}
+
+/* Backdrop colors */
+/* Hardcoded color */
+/* Hardcoded color */
+/* Private colors */
+:root[privatebrowsingmode="temporary"] {
+    --gnome-accent-fg: var(--gnome-palette-blue-4);
+    /* Headerbar */
+    --gnome-headerbar-background: #D7E3F0 !important;
+    /* Tabs */
+    --gnome-tabbar-tab-hover-background: #cbd7e3;
+    /* Hardcoded color */
+    --gnome-tabbar-tab-active-background: #c6d1dd;
+    /* Hardcoded color */
+    --gnome-tabbar-tab-active-background-contrast: #a9b6c4;
+    /* Hardcoded color */
+    --gnome-tabbar-tab-active-hover-background: #c0cbd7;
+    /* Hardcoded color */
+}
+
+/* Private and backdrop colors */
+:root[privatebrowsingmode="temporary"]:-moz-window-inactive {
+    --gnome-headerbar-background: #D7E3F0 !important;
+    --gnome-tabbar-tab-hover-background: #e4e9f0;
+    /* Hardcoded color */
+    --gnome-tabbar-tab-active-background: #e1e7ed;
+    /* Hardcoded color */
+}
+}
+
+@-moz-document url-prefix("https://app.roll20.net/editor") {
+/* Interface - Colors, Font, and General  */
+:root {
+    /* Color Variables */
+    --dark-primary: var(--gnome-accent-bg) !important;
+    --dark-primary-highlight: var(--gnome-accent) !important;
+    --dark-surface1: var(--gnome-sidebar-background) !important;
+    --dark-surface2: var(--gnome-sidebar-background) !important;
     --dark-purple-text: var(--gnome-accent) !important;
-    --el-button-border-color: var(--gnome-accent-bg);
-    --el-button-hover-bg-color: var(--gnome-accent);
-    --el-button-active-bg-color: var(--gnome-accent);
-    --el-button-hover-border-color: var(--gnome-accent-bg);
-    --dark-background: var(--gnome-inactive-tabbar-tab-background);
+    --el-button-border-color: var(--gnome-accent-bg) !important;
+    --el-button-hover-bg-color: var(--gnome-accent) !important;
+    --el-button-active-bg-color: var(--gnome-accent) !important;
+    --el-button-hover-border-color: var(--gnome-accent-bg) !important;
+    --dark-background: var(--gnome-inactive-tabbar-tab-background) !important;
     --color-primary-text: var(--gnome-accent-bg) !important;
     --el-border-color-light: var(--gnome-accent) !important;
     --el-color-primary: var(--gnome-accent-bg) !important;
@@ -132,6 +292,25 @@
     --el-border-radius-base: 8px !important;
     --el-border-color: var(--gnome-button-active-background) !important;
     --el-border-color-hover: var(--gnome-accent) !important;
+    /* Accent Colors */
+    --primary-dark: var(--gnome-button-background) !important;
+    --primary-dark-l80: color-mix(in srgb, var(--gnome-accent) 15%, transparent) !important;
+    --primary-dark-d20: var(--gnome-active-color) !important;
+    --primary-dark-d40: var(--gnome-active-color) !important;
+    --primary-dark-l20: var(--gnome-button-flat-hover-background) !important;
+    --primary-dark-l40: var(--gnome-accent) !important;
+    --primary-dark-l60: color-mix(in srgb, var(--gnome-accent) 75%, white) !important;
+    --surface-primary-text: color-mix(in srgb, var(--gnome-accent) 75%, white) !important;
+    --link-text-hover: color-mix(in srgb, var(--gnome-accent) 60%, white) !important;
+    --dark-card-purple: var(--gnome-view-selected-hover-background) !important;
+    --vtt-dropdown-header-bg: var(--gnome-active-color) !important;
+    --el-text-color-primary: var(--gnome-accent-bg) !important;
+    --surface-dark-gamecard: #263F5EFF;
+}
+
+/* What's new message background imagae color */
+#whats-new-insert-outer {
+    filter: hue-rotate(330deg) !important;
 }
 
 /* Fonts */
@@ -139,35 +318,1078 @@ body {
     font-family: Inter, "Proxima Nova", "ProximaNova-Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
-/* Dark Mode Toggle */
-input:checked + .dark-mode-slider {
-    background-color: var(--gnome-accent-bg);
+.interad {
+    /* Removes the ad that displays when loading into a game */
+    display: none !important;
 }
 
-.dark-mode-switch {
-    transform: rotate(90deg);
-    top: 273px;
-    left: 9px;
-    scale: 0.65;
+/* Loading Screen Background */
+#loading-overlay {
+    background-color: var(--gnome-inactive-tabbar-tab-background);
 }
 
-.dark-mode-switch:hover .tooltiptext {
-    rotate: 270deg;
-    margin-left: -157px;
-    margin-top: -113px;
-    scale: 1.3;
-    padding-right: 4px;
-    padding-left: 5px;
-    padding-top: 3px;
+/* UI Dialogues */
+.ui-dialog {
+    border-radius: 12px !important;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--gnome-tabbar-tab-active-background-contrast);
+    box-shadow: var(--gnome-menu-shadow) !important;
+}
+
+.ui-dialog-titlebar {
+    padding-bottom: 0px !important;
+    padding-top: 0px !important;
+    background: transparent !important;
+    padding-left: 5px !important;
+    font-size: 17px !important;
+}
+
+
+/* Exit Game Button */
+html.dark .el-button {
+    --el-button-disabled-text-color: rgba(255, 255, 255, 0.5) !important;
+    --el-button-hover-text-color: #E6E6E6 !important;
+    --el-button-border-color: var(--gnome-accent-bg) !important;
+    --el-button-hover-bg-color: var(--gnome-focused-urlbar-border-color) !important;
+    --el-button-active-bg-color: var(--gnome-accent) !important;
+    --el-button-hover-border-color: var(--gnome-accent-bg) !important;
+}
+}
+
+@-moz-document url-prefix("https://app.roll20.net/editor") {
+/* Toggles and Checkboxes */
+/* Color of toggled switches */
+.dark .el-switch.is-checked .el-switch__core {
+    background: var(--gnome-accent-bg) !important;
+}
+
+/* Checkboxes */
+.el-checkbox__inner {
+    display: inline-block;
+    position: relative;
+    border: var(--el-checkbox-input-border);
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: transparent;
+    z-index: var(--el-index-normal);
+    transition: border-color .25s cubic-bezier(0.71, -0.46, 0.29, 1.46), background-color .25s cubic-bezier(0.71, -0.46, 0.29, 1.46), outline .25s cubic-bezier(0.71, -0.46, 0.29, 1.46);
+    border-color: var(--gnome-accent) !important;
+}
+
+/* Checkbox colors */
+.el-checkbox__input.is-checked .el-checkbox__inner {
+    background-color: var(--gnome-accent-bg) !important;
+    border-color: var(--gnome-accent-bg) !important;
+}
+
+/* Color of checkbox labels */
+.el-checkbox__input.is-checked + .el-checkbox__label {
+    color: var(--gnome-accent) !important;
+}
+}
+
+@-moz-document url-prefix("https://app.roll20.net/editor") {
+/*  Right Sidebar - Basic Layout */
+#rightsidebar {
+    /* Why did the sidebar have rounded corner? */
+    border-radius: 0px !important;
+    border-color: var(--gnome-tabbar-tab-active-background-contrast) !important;
+}
+
+/* View/hide control for the main sidebar */
+#sidebarcontrol {
+    box-sizing: border-box;
+    width: 24px;
+    height: 24px;
+    border-radius: 50px 0% 0% 50px;
+    background-color: var(--vtt-collapse-btn-bg);
+    border: 1px solid var(--vtt-collapse-btn-border-color);
+    border-right: 0px solid var(--vtt-collapse-btn-border-color);
+    color: var(--vtt-collapse-btn-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(15px);
+    opacity: 100%;
+    top: 8px;
+    padding-right: 35px;
+}
+
+/* Icon of view/hide control */
+#sidebarcontrol .fonticon-menu {
+    font-size: 13px;
+    padding-left: 20px;
+}
+
+#rightsidebar .ui-tabs-panel {
+    border-radius: 0px !important;
+}
+
+
+/* Fix for journal tab */
+#journal .content {
+    margin-top: 2px !important;
+}
+}
+
+@-moz-document url-prefix("https://app.roll20.net/editor") {
+/*  Right Sidebar - View Switchers */
+/* Wrapper for the View Switchers - Now a flex that justifies each entry */
+#rightsidebar .tabmenu {
+    width: calc(100% - 12px) !important;
+    padding: 0px 6px !important;
+    margin: 0px !important;
+    border: 0px !important;
+    top: 0px !important;
+    position: absolute !important;
+    display: flex !important;
+    justify-content: space-evenly !important;
+    gap: 4px;
+    border-bottom: solid 1px var(--gnome-tabbar-tab-active-background-contrast) !important;
+    background-color: var(--gnome-headerbar-background) !important;
+}
+
+[role="tab"] {
+    flex-basis: 32px !important;
+    flex-grow: 1 !important;
+    flex-shrink: 1 !important;
+    display: flex;
+    justify-content: center;
+}
+
+
+/* Hides an element that was messing up the centering of view switchers */
+.ui-helper-clearfix:after {
+    display: none !important;
+}
+
+/* View Switchers */
+.Roll20Icon.ui-tabs-anchor {
+    font-size: 18px !important;
+    /* font-size alters the size of the icons */
+    line-height: 1.7 !important;
+    border-radius: 7px !important;
+    margin: 4px 0px 6px 0px !important;
+    width: 100%;
+    height: 29px !important;
+    padding: 0px !important;
+    text-align: center !important;
+    border-bottom: 1px solid transparent !important;
+    /* Fixes a strange effect where hovering an view switcher would change the its border size */
+    transition: background .2s !important;
+}
+
+/* Manual line height for view switcher icons that are offset due to the font */
+#ui-id-2,
+#ui-id-3,
+#ui-id-5,
+#ui-id-6,
+#anchor_settings_categories {
+    line-height: 1.6 !important;
+}
+
+
+/* Color of View switcher when hovered */
+.Roll20Icon.ui-tabs-anchor:hover {
+    background-color: var(--gnome-button-flat-hover-background)
+}
+
+/* Color of view switcher when focused */
+.ui-state-active .Roll20Icon.ui-tabs-anchor {
+    background-color: var(--gnome-button-flat-active-background) !important;
+}
+
+
+/* Fix for weird focus box showing up around view switchers in some browsers */
+#rightsidebar .ui-tabs-nav li.ui-state-active a:focus:not(:focus-visible) {
+    outline: none
+}
+}
+
+@-moz-document url-prefix("https://app.roll20.net/editor") {
+/* Right Sidebar - Chat Log */
+/* #textchat is the main div that contains the chat log */
+#textchat {
+    top: 42px !important;
+    box-sizing: content-box !important;
+    padding-bottom: 3px!important;
+}
+
+/* Fixes chat log having extra empty space at the bottom. Relies of the main #textchat div having content box sizing and 3px of bottom padding */
+#textchat .content {
+    margin-bottom: -3px !important;
+}
+
+/* User Icons */
+.textchatcontainer .avatar img {
+    width: 28px !important;
+    height: 28px !important;
+    border-radius: 23px;
+    margin-top: 14px;
+    margin-left: -5px;
+    border-top: 1px;
+    border-color: var(--gnome-tabbar-tab-active-background-contrast);
+    border-width: 2px;
+    border-style: solid;
+    background: var(--gnome-tabbar-tab-active-background-contrast);
+}
+
+/* Moves user icons to the side */
+div.message div.avatar img {
+    margin-left: 7px;
+}
+
+/* Hides the name of message senders - just use unique icons, damnit! */
+.by {
+    visibility: hidden;
+    font-size: 0px !important;
+}
+
+/* Message dividers */
+#textchat .spacer {
+    width: 111vw !important;
+    height: 0.89116666666666666px !important;
+    background-color: var(--gnome-tabbar-tab-active-background-contrast) !important;
+    margin-left: -57px !important;
+    margin-bottom: 24px !important;
+    margin-top: 20px;
+    line-height: 1 !important;
+}
+
+/* Adds spacing between messages, and move them to the left */
+.textchatcontainer .message.private:nth-of-type(n+1),
+div.message.rollresult:nth-child(n+1) {
+    padding-left: 49.5px;
+    margin-top: 20px;
+    margin-bottom: -19.5px;
+    padding-bottom: 21px;
+}
+
+/* Adjusts normal messages so that they work with all the changes I've made to the chat log */
+div.message.general:nth-child(n+1) {
+    padding-left: 57px;
+    margin-top: 20px;
+    margin-bottom: -19.5px;
+    padding-bottom: 21px;
+}
+
+/* Background of all messages should be transparent, with the background color instead being set by the chat log */
+.textchatcontainer .rollresult.quantumRoll,
+.textchatcontainer .message.you {
+    background: none;
+}
+
+/* Dice roll results */
+.textchatcontainer .formula,
+.textchatcontainer .rolled {
+    border-color: transparent !important;
+    border-radius: 7px !important;
+    background-color: var(--gnome-entry-background) !important;
+}
+
+/* Wrapper for the dice icons and the numbers they rolled */
+div.formula.formattedformula {
+    padding-top: 4px !important;
+    padding-bottom: 2px !important;
+    margin-right: 5px !important;
+    min-height: 32px !important;
+    box-sizing: border-box !important;
+}
+
+/* Fixes all the symbols (plus, minus, ect.) from being too low in their respective sections */
+div.dicegrouping.ui-sortable {
+    line-height: normal !important;
+}
+
+/* The numbers shown on top of the dice icons */
+div.didroll {
+    padding-top: 6px !important;
+}
+
+/* Total sum of roll */
+div.rolled.ui-draggable {
+    display: inline-block !important;
+    height: 40px !important;
+    padding: 6px !important;
+    margin-top: -1px !important;
+    margin-bottom: -1px !important;
+    box-sizing: border-box !important;
+    line-height: 27px !important;
+}
+
+/* Funky things to make the dice roller element line up in a sensible manner */
+div.message.rollresult > strong {
+    margin-bottom: 6px;
+    padding-bottom: 9px;
+    border-bottom-width: 0px;
+    border-bottom-style: solid;
+    width: 4px;
+    height: 20px;
+    display: inherit;
+    margin-left: 56px;
+    margin-top: -79px;
+    color: transparent;
+}
+
+
+
+
+/* Chat timestamps */
+.textchatcontainer .message .tstamp {
+    margin-left: 5px;
+    margin-bottom: 2px;
+    margin-top: -1px;
+    padding-bottom: 4px;
+    padding-top: 1.5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* "View all chat entries for this game" message */
+div.chatlogmessage {
+    padding: 10px !important;
+    margin-bottom: 0px !important;
+    margin-top: 0px !important;
+    width: unset !important;
+    text-align: center !important;
+}
+
+/* Sets the first message in chat to not have a huge margin-top, so that the purpe doesn't get cut off */
+div.rollresult:nth-child(1) {
+    margin-top: 0px;
+}
+
+.message:first-of-type,
+.message:first-of-type .spacer {
+    margin-top: 0px !important;
+}
+
+/* Fixes for system messages */
+.textchatcontainer .content .message.system {
+    padding-left: 28px !important;
+}
+
+/* Stops system messages from having their special background cut off by the margins of normal messages */
+.message.system + .message,
+.message.system + .message .spacer {
+    margin-top: 0px !important;
+}
+
+/* Fixes the fancy update message */
+#textchat .message.news .spacer {
+    margin-bottom: 0px !important;
+}
+
+/* Fixes the fancy update message - same thing but for the bottom */
+.message.news + .message.system .spacer {
+    margin-top: 0px !important;
+}
+}
+
+@-moz-document url-prefix("https://app.roll20.net/editor") {
+/*  Right Sidebar - Chat Text Entry Area */
+/* Text Entry Area - a seperate div from #textchat for some reason */
+#textchat-input {
+    right: 0px !important;
+    margin: 0px !important;
+    padding: 13px 4.5px 13px 4.5px !important;
+    color: var(--gnome-menu-border-color) !important;
+    border: solid var(--gnome-tabbar-tab-active-background-contrast) !important;
+    border-top-width: 1px !important;
+    border-left: 0px !important;
+    border-right: 0px !important;
+    border-bottom: 0px !important;
+}
+
+/* Text input div */
+.ui-autocomplete-input {
+    margin: auto !important;
+    width: calc(100% - 22px) !important
+}
+
+/* Text entry field */
+#textchat-input textarea {
+    background-color: var(--gnome-entry-background) !important;
+    border-style: hidden !important;
+}
+
+/* Focus highlight for chat entry and user selector */
+div#textchat-input textarea.ui-autocomplete-input:focus,
+select#speakingas.selectize:focus {
+    outline: 2px solid var(--gnome-focused-urlbar-border-color) !important;
+}
+
+/* Section containing the "send as" section and send button */
+#textchat-input > div:nth-child(5) {
+    display: flex !important;
+    margin: 10px 7px 0px 7px !important;
+    box-sizing: border-box !important;
+    justify-content: center !important;
+}
+
+/* Wrapper for speaking as selector */
+#textchat-input > div:nth-child(5) > div:nth-child(1) {
+    width: 100%;
+}
+
+
+/* Speaking as selector */
+div#textchat-input div select#speakingas.selectize {
+    background: var(--gnome-entry-background);
+    border: 0px solid var(--gnome-tabbar-tab-active-background-contrast);
+    border-radius: 12px;
+    width: calc(100% - 33px)!important;
+    margin: 0px !important;
+}
+
+/* Selected character lebel */
+#speakingas {
+    padding-left: 9px;
+}
+
+
+/* "As:" label */
+#textchat-input label {
+    top: 1px !important;
+}
+
+/* Send button */
+#chatSendBtn {
+    height: 16px !important;
+    width: 16px !important;
+    margin-top: 0px !important;
+    padding: 6px 7px !important;
+    margin-left: 10px !important;
+    border-radius: 50% !important;
+    font-size: 0px !important;
+    background: var(--gnome-button-suggested-action-background) !important
+}
+
+#chatSendBtn:hover {
+    background: color-mix(in srgb, var(--gnome-button-suggested-action-background) 90%, transparent) !important;
+}
+
+/* Add an icon to the send button */
+#chatSendBtn::before {
+    content: "\f1d8";
+    /* Unicode for fa-paper-plane */
+    font-family: "Font Awesome 5 Free";
+    /* Font Family for Free Solid icons */
+    font-weight: 900;
+    /* Font weight for Free Solid icons */
+    font-size: 14px;
+    margin-left: -2px;
+    line-height: 1.2;
+}
+
+/* Who's Typing Popup*/
+#whoistyping {
+    padding-top: 0px !important;
+    margin-top: 20px !important;
+    margin-bottom: 0px !important;
+    padding-bottom: 5px !important;
+}
+
+/* Dice rolling popup */
+#textchat-notifier {
+    padding: 8px 12px;
+    border-radius: 7px;
+    line-height: 1;
+    margin: 0px 6px 0px 0px;
+    color: var(--grayscale-dark-base);
+}
+}
+
+@-moz-document url-prefix("https://app.roll20.net/editor") {
+/* Right Sidebar - Art Library Tab */
+/* Fix for image library tab, since the size of the view switcher wrapper is now larger */
+#imagedialog .searchbox {
+    margin-top: 2px !important;
+}
+
+/* Width of the top section holding the search bar */
+#imagedialog > div:nth-child(1) {
+    width: calc(100% - 20px);
+}
+
+/* Search label */
+#imagedialog > div:nth-child(1) > p:nth-child(2) {
+    margin-top: 3px;
+}
+
+/* Width of the search bar */
+#imagedialog > div:nth-child(1) > input:nth-child(4) {
+    width: calc(100% - 36px) !important;
+    padding-right: 30px !important;
+}
+
+/* Place search info button inside of the search bar */
+.searchinfotoggle {
+    display: unset !important;
+    margin-left: -28px !important;
+}
+
+/* Color of the clicked state of the info button */
+.searchinfotoggle:active {
+    color: var(--gnome-inactive-toolbar-icon-fill);
+}
+
+
+/* Search info panel */
+#searchinfo pre {
+    padding: 4.5px !important;
+    color: var(--dark-primarytext) !important;
+    background-color: var(--gnome-entry-background) !important;
+    border: 0px solid;
+    border-radius: var(--el-border-radius-base) !important;
+}
+
+/* More of the above */
+#searchinfo {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    padding-top: 9px !important;
+}
+
+/* Examples in the info panel */
+#searchinfo > span:nth-child(n) > pre:nth-child(n) {
+    margin-top: 6px !important;
+    width: calc(100% - 14px) !important;
+    padding-left: 9.5px !important;
+}
+
+/* Margin at the bottom of info panel */
+#searchinfo > span:nth-child(4) > pre:nth-child(1) {
+    margin-bottom: 6px !important;
+}
+
+/* Moves the plus/minus icons down to be in line with the text */
+#rightsidebar .paddedtable button {
+    display: block;
+    margin-top: 2px;
+}
+
+/* Center the two tabs, premium vs your library */
+div.tabcontainer:nth-child(7) {
+    margin-top: -8px;
+    display: flex;
+    margin-left: 0px;
+    justify-content: center;
+    min-width: unset;
+}
+
+/* Hover color of the two tabs */
+#imagedialog .tabcontainer a:hover {
+    color: var(--gnome-accent);
+}
+
+/* Upload button */
+.showuploaddialog {
+    /* margin-right: 15px; */
+    margin-right: 5px !important;
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+    margin-top: -2px !important;
+}
+
+/* Add folder button */
+.addlibraryfolder {
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+    padding-right: 6px !important;
+    padding-left: 6px !important;
+    margin-top: -2px !important;
+    margin-right: 7px !important;
+}
+
+/* Color of dropdowns */
+.no-touch .dd-content:hover {
+    color: var(--gnome-accent);
+}
+
+/* Recent upload label */
+#userlibrary > div:nth-child(5) {
+    padding-left: 6px;
+    padding-right: 6px;
+    margin-top: -21px;
+}
+
+/* That one button - I don't know what it's meant to do, but it's aligned properly now */
+div.tabcontainer:nth-child(3) {
+    margin-top: 5px;
+}
+}
+
+@-moz-document url-prefix("https://app.roll20.net/editor") {
+/* Right Sidebar - Jukebox */
+/* Moves the main section down */
+#jukebox .content {
+    margin-top: 12px !important;
+}
+
+/* Border of playing section */
+#jukeboxwhatsplaying,
+div#searchinfo {
+    border: 1px solid var(--gnome-button-active-background) !important;
+    border-radius: 8px !important;
+}
+
+/* Spacing in now playing section */
+#jukeboxwhatsplaying {
+    padding-top: 6px;
+    padding-left: 6px;
     padding-bottom: 3px;
 }
 
-
-#darkmode-switch-icon > path:nth-child(1) {
-    filter: hue-rotate(300deg) brightness(173%)
+/* Spacer at the bottom of the page */
+#jukebox hr {
+    border-top-color: var(--gnome-tabbar-tab-active-background-contrast);
 }
 
-/* Sidebar */
+/* Decrease spacing below h3 headers */
+#rightsidebar #jukebox h3 {
+    margin-bottom: 2px !important;
+}
+}
+
+@-moz-document url-prefix("https://app.roll20.net/editor") {
+/* Right Sidebar - Macros */
+/* Decrease spacing below h3 headers */
+#rightsidebar #deckstables h3 {
+    margin-bottom: 2px !important;
+}
+
+/* Fix for macro tab */
+#deckstables .content {
+    margin-top: 12px !important;
+}
+}
+
+@-moz-document url-prefix("https://app.roll20.net/editor") {
+/* Right Sidebar - Settings */
+/* Fix for settings tab */
+#vm_settings_categories #settings-categories {
+    margin-top: 2px !important;
+    height: calc(100% - 2px) !important;
+}
+/* Adds space to the top of the settings panel list via the wrapper for dropdowns */
+#settings-accordion {
+    margin: 8px !important;
+}
+
+/* Remove the white line underneath an expanded panel */
+#settings-accordion .panel-body {
+    border-top-color: transparent !important;
+}
+
+/* Panel wrappers */
+#settings-accordion .panel {
+    margin-top: 1px !important;
+    width: clamp(136px, calc(100% - 2px), 490px) !important;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Panel headers */
+.panel-title {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+/* Remove underline when hovering the panel header */
+.panel-heading:hover .accordion-toggle,
+.panel-heading:focus .accordion-toggle,
+.panel-heading:active .accordion-toggle,
+.panel-heading .accordion-toggle {
+    text-decoration: none !important;
+}
+
+
+
+/* Panel wrappers */
+#settings-accordion .panel,
+.panel-heading {
+    border-radius: 0px !important;
+    overflow: hidden;
+}
+
+/* Applies rounded corners to the first panel */
+#settings-accordion .panel:first-of-type {
+    border-radius: 8px 8px 0px 0px !important;
+}
+
+/* Applies rounded corners to the last panel */
+#settings-accordion .panel:last-of-type {
+    border-radius: 0px 0px 8px 8px !important;
+}
+
+/* Expanded inside of panel */
+.panel-collapse {
+    background: var(--gnome-hover-color) !important;
+}
+}
+
+@-moz-document url-prefix("https://app.roll20.net/editor") {
+/*  User Indicators */
+/* Wrapper for all the player names */
+#avatarContainer {
+    margin-bottom: -20px;
+    margin-left: 1px;
+}
+
+.pz-top #avatarContainer {
+    margin-left: -18px;
+    margin-top: -14px;
+}
+
+body:has(.master-toolbar-collapsed) .pz-top #avatarContainer {
+    margin-left: -45px !important;
+}
+
+/* Div containing each player's name */
+div.playername:nth-child(n) {
+    border-radius: 5px;
+    border-color: var(--gnome-menu-background);
+    backdrop-filter: blur(15px);
+}
+
+/* Display name of players */
+.player .playername {
+    background-color: var(--gnome-tab-button-hover-background);
+    font-size: 14px;
+    font-family: rubik;
+    text-align: left;
+    padding-left: 9px;
+    width: 141px;
+    margin-bottom: 1px !important;
+}
+
+/* Display name bar adjustment for small video windows */
+.smallvideo .player .playername {
+    width: 91px !important;
+}
+
+/* Display name bar adjustment for large video windows */
+.largevideo .player .playername {
+    width: 191px !important;
+}
+
+/* Color display of players */
+div.color_picker:nth-child(n),
+div.playercolor {
+    border-radius: 5px !important;
+    width: 14px !important;
+    height: 14px !important;
+    margin-top: 5px !important;
+    margin-right: 5px !important;
+}
+
+/* Video popups */
+.player .video {
+    border-radius: 15px 15px 5px 5px;
+}
+
+.video {
+    margin-bottom: 6px;
+}
+
+
+
+/* User color selector */
+div#color_selector {
+    background-color: var(--dark-surface2);
+    border-color: var(--gnome-tabbar-tab-active-background-contrast);
+    border-radius: 12px;
+    padding: 8px;
+    margin-top: 163px;
+    margin-left: -13px;
+}
+
+/* Color list */
+div.color_swatch {
+    border-radius: 5px;
+}
+
+/* Wrapper for hex entry area */
+div#color_custom:hover {
+    border-color: transparent !important;
+    background-color: var(--gnome-entry-bg) !important;
+}
+
+/* Label that says "hex" */
+div#color_custom label {
+    color: var(--dark-primarytext);
+    margin-bottom: -4px;
+    margin-left: 4px;
+    margin-top: 4px;
+}
+
+/* Label within the hex box */
+div#color_custom input {
+    margin: 5px 2px;
+    font-size: 95%;
+    border: 0px solid #000;
+    width: 104px;
+    padding-left: 3px;
+    margin-bottom: 1px;
+    background: var(--gnome-entry-background);
+    border-radius: 6px;
+}
+}
+
+@-moz-document url-prefix("https://app.roll20.net/editor") {
+/*  Macro Bar */
+/* Wrapper for all macros */
+#macrobar {
+    margin-bottom: -9px;
+    margin-left: -8px;
+    margin-right: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    width: auto;
+    height: 54px !important;
+    border-radius: 0px 12px 0px 0px;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-color: var(--gnome-tabbar-tab-active-background-contrast);
+}
+
+/* Macro bar */
+#macrobar_macros {
+    background-color: var(--gnome-toolbar-background);
+    width: calc(100% - 0px);
+    padding: 8px 0px 8px 17px !important;
+    overflow: scroll !important;
+}
+
+/* Macro button text */
+div.macrobox:nth-child(n) > button:nth-child(n) {
+    background: var(--gnome-button-background) !important;
+    color: #E6E6E6 !important;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0) !important;
+    border: 1px solid transparent !important;
+    border-radius: 7px;
+    padding: 5px 8px 5px 8px;
+    font-weight: 600;
+    font-size: 13px !important;
+}
+
+/* Hover color of macro buttons */
+div.macrobox:nth-child(n) > button:nth-child(n):hover {
+    background: var(--gnome-button-hover-background) !important;
+}
+
+
+
+/* Fix - Stops the macro buttons from gaining large padding when hovered */
+div.macrobox:nth-child(n) {
+    background-color: transparent !important;
+    margin-right: 9px !important;
+    padding-right: 0px !important;
+}
+
+/* Fix - Stops the inner of the macro buttons gaining margin when hovered */
+div.macrobox:nth-child(n):hover {
+    background-color: rgba(0, 0, 0, 0) !important;
+    margin-right: 9px !important;
+}
+}
+
+@-moz-document url-prefix("https://app.roll20.net/editor") {
+/*  Initiative Tracker */
+.initiativedialog {
+    min-width: 200px !important;
+}
+
+/* Wrapper for the initiative tracker parts of the dialogue */
+#initiativewindow {
+    scrollbar-width: none !important;
+    overflow: visible !important;
+}
+
+/* Top section that holds the count of entries and the sort button */
+.initiative_top_section {
+    margin-top: -14px;
+}
+
+/* The count */
+.count__wrapper {
+    margin-left: 7px;
+}
+
+/* Sort label */
+.sortlist_quicksort__wrapper > p:nth-child(1) {
+    display: none;
+}
+
+/* Sort button */
+.sortlist_quicksort__wrapper {
+    margin-top: -28px !important;
+    margin-right: 6px !important;
+    opacity: 70%;
+}
+
+/* Hover indicator */
+.sortlist_quicksort__wrapper:hover {
+    opacity: 80%;
+}
+
+.characterlist {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Initiative entries */
+#initiativewindow .token {
+    border-bottom-width: 0px !important;
+    margin-bottom: 1px !important;
+    margin-top: 0px !important;
+    padding-bottom: 3px !important;
+    width: clamp(136px, calc(100% - 10px), 450px);
+    background-color: var(--gnome-headerbar-background);
+    min-height: 36px !important;
+}
+
+/* First (active) entry */
+#initiativewindow .token:first-of-type {
+    background-color: var(--gnome-trough-active-background) !important;
+    border-radius: 8px 8px 0px 0px !important;
+}
+
+/* Last entry */
+#initiativewindow .token:last-of-type {
+    border-radius: 0px 0px 8px 8px !important;
+}
+
+
+/* Entry names */
+#initiativewindow .token span.name {
+    padding-left: 10px !important;
+    padding-top: 0px !important;
+    padding-bottom: 2px !important;
+    font-weight: 400;
+    font-family: "Rubik";
+}
+
+/* Entry icons */
+#initiativewindow .token > img {
+    margin-bottom: 2px !important;
+    margin-left: 1px !important;
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 50px;
+    border-top: 1px;
+    border-color: var(--gnome-tabbar-tab-active-background-contrast);
+    border-width: 2px;
+    border-style: solid;
+    background: var(--gnome-tabbar-tab-active-background-contrast);
+}
+
+/* Initiative counts */
+span.initiative {
+    font-size: 18px !important;
+    margin-top: 2px !important;
+    margin-right: 3px !important;
+}
+
+/* Initiative counts - hover */
+span.initiative.editable:hover {
+    background: transparent !important;
+    color: var(--gnome-button-active-background) !important;
+}
+
+/* Input box for your initiative count */
+#initiativewindow input {
+    height: 15px !important;
+    direction: rtl !important;
+    font-family: "Inter" !important;
+    font-weight: 600 !important;
+    margin-right: -4px;
+}
+
+#initiativewindow input:hover {
+    outline: none;
+}
+
+#initiativewindow input:focus {
+    outline: none;
+}
+}
+
+@-moz-document url-prefix("https://app.roll20.net/editor") {
+/* Zoom */
+/* Move zoom container over to the left side of the screen */
+#vm_zoom_buttons {
+    top: 324px !important;
+    left: 5px !important;
+    transition: top ease 200ms;
+}
+
+/* Float the actual interactable bits to the left of their parent container */
+.parentContainer {
+    float: left !important;
+}
+
+/* When the main toolbar is collapsed, move the zoom toolbar up */
+body:has(.master-toolbar-collapsed) #vm_zoom_buttons {
+    top: 40px !important;
+}
+}
+
+@-moz-document url-prefix("https://app.roll20.net/editor") {
+/* Character Nameplates */
+.nameplate[data-v-fe91bfb6] {
+    background-color: var(--gnome-tab-button-hover-background);
+    font-size: 13px;
+    font-family: Rubik, sans-serif;
+    text-align: center;
+    font-weight: 500;
+    width: fit-content;
+    color: var(--dark-primarytext);
+    line-height: 20px;
+    white-space: nowrap;
+    border-radius: 5px;
+    padding: 1px 8px;
+}
+
+/* Bar Numbers */
+.bar-background {
+    font-size: 15px !important;
+}
+
+
+.bar-background[data-v-101adf6e]::before {
+    font-weight: 600;
+    text-shadow: 0px 0px 2px #000;
+    font-family: Inter;
+    line-height: 14px;
+}
+}
+
+@-moz-document url-prefix("https://app.roll20.net/editor") {
+/* Tool Menu */
+.dropdown-header-open[data-v-3b231786],
+.dropdown-header[data-v-3b231786]:hover {
+    background-color: color(srgb 0.470588 0.682353 0.929412 / 0.16) !important;
+}
+}
+
+@-moz-document url-prefix("https://app.roll20.net/editorrrrrrrrrrrrrrrrrrrrrrrrrr") {
+/* Old CSS - Poorly Written and Documented */
 #rightsidebar .ui-tabs-nav li.ui-state-active a {
     border-radius: 7px;
     background-color: var(--gnome-button-flat-active-background);
@@ -175,7 +1397,9 @@ input:checked + .dark-mode-slider {
     transition: all 0.2s;
 }
 
-#rightsidebar .ui-tabs-nav li.ui-state-active a:focus:not(:focus-visible) { outline: none } 
+#rightsidebar .ui-tabs-nav li.ui-state-active a:focus:not(:focus-visible) {
+    outline: none
+}
 
 .ui-state-default,
 .ui-widget-content .ui-state-default,
@@ -310,11 +1534,6 @@ input:checked + .dark-mode-slider {
     border-style: hidden;
 }
 
-.ui-autocomplete-input {
-    width: 298px !important;
-    margin-left: 3.5px !important;
-}
-
 div#textchat-input div select#speakingas.selectize {
     background: var(--gnome-entry-background);
     border: 0px solid var(--gnome-tabbar-tab-active-background-contrast);
@@ -332,14 +1551,14 @@ div#textchat-input div select#speakingas.selectize {
 }
 
 #textchat-input > div:nth-child(5) {
-width: 317px !important;
+    width: 317px !important;
 }
 
 #chatSendBtn {
-height: 16px !important;
-margin-top: 0px !important;
-padding-top: 5px !important;
-padding-bottom: 7px !important;
+    height: 16px !important;
+    margin-top: 0px !important;
+    padding-top: 5px !important;
+    padding-bottom: 7px !important;
     margin-left: 5px !important;
 }
 
@@ -682,8 +1901,9 @@ div.el-popper:nth-child(2) {
     border-color: transparent !important;
 }
 
-#settingsVideoTab > a:nth-child(1), .nav > li:nth-child(1) > a:nth-child(1) {
-border-radius: 8px 8px 0px 0px !important;
+#settingsVideoTab > a:nth-child(1),
+.nav > li:nth-child(1) > a:nth-child(1) {
+    border-radius: 8px 8px 0px 0px !important;
 }
 
 /* Slider */
@@ -692,9 +1912,9 @@ border-radius: 8px 8px 0px 0px !important;
 }
 
 .el-popper.is-dark {
- color:var(--dark-primarytext);
- border:1px solid var(--gnome-accent);
- background: var(--gnome-accent);
+    color: var(--dark-primarytext);
+    border: 1px solid var(--gnome-accent);
+    background: var(--gnome-accent);
 }
 
 
@@ -773,7 +1993,8 @@ div.playername:nth-child(n) {
     border-color: var(--gnome-menu-background);
 }
 
-div.color_picker:nth-child(n), div.playercolor {
+div.color_picker:nth-child(n),
+div.playercolor {
     border-radius: 5px !important;
     width: 14px !important;
     height: 14px !important;
@@ -1240,7 +2461,6 @@ div#secondary-toolbar ul.mode.path.rect.polygon.ellipse li div.color_picker {
 
 ul.mode:nth-child(2) > li:nth-child(2) > div:nth-child(2) {
     margin-left: 2px !important;
-    
 }
 
 #secondary-toolbar {
@@ -1317,77 +2537,68 @@ div#color_custom input {
 
 /* Who is Typing */
 #whoistyping {
-padding-top: 0px !important;
-margin-top: 20px !important;
-margin-bottom: 0px !important;
-padding-bottom: 5px !important;
+    padding-top: 0px !important;
+    margin-top: 20px !important;
+    margin-bottom: 0px !important;
+    padding-bottom: 5px !important;
 }
 
 /* Chat Timestamps */
 .textchatcontainer .message .tstamp {
-margin-left: 5px;
-margin-bottom: 2px;
-margin-top: -4px;
-padding-bottom: 4px;
-padding-top: 1.5px;
+    margin-left: 5px;
+    margin-bottom: 2px;
+    margin-top: -4px;
+    padding-bottom: 4px;
+    padding-top: 1.5px;
 }
 
-/* Initative */ 
+/* Initative */
 li.token:nth-child(n) {
-border-bottom-width: 0px !important;
-margin-bottom: 2px !important;
-margin-top: 0px !important;
-border-radius: 6px !important;
-        padding-bottom: 3px !important;
+    border-bottom-width: 0px !important;
+    margin-bottom: 2px !important;
+    margin-top: 0px !important;
+    border-radius: 6px !important;
+    padding-bottom: 3px !important;
     margin-left: auto !important;
-margin-right: auto !important;
-    width: clamp(136px, calc(100% - 10px),  450px);
+    margin-right: auto !important;
+    width: clamp(136px, calc(100% - 10px), 450px);
 }
 
 #initiativewindow ul li:first-child {
-background-color: var(--gnome-button-background);
-    width: clamp(136px, calc(100% - 10px),  450px);
-    
+    background-color: var(--gnome-button-background);
+    width: clamp(136px, calc(100% - 10px), 450px);
 }
 
 /* editorDarkMode.css | https://app.roll20.net/assets/editorDarkMode.css */
-
 #initiativewindow ul li:first-child {
-  /* background-color: var(--dark-green-d60); */
-  background-color: var(--gnome-button-background);
+    /* background-color: var(--dark-green-d60); */
+    background-color: var(--gnome-button-background);
 }
 
 #initiativewindow ul li {
-  /* background-color: var(--dark-gray-disabled); */
-  background-color: var(--gnome-headerbar-background);
+    /* background-color: var(--dark-gray-disabled); */
+    background-color: var(--gnome-headerbar-background);
 }
 
 /* Element | https://app.roll20.net/editor/ */
-
 .ui-dialog-titlebar {
-  padding-bottom: 0px !important;
-  padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    padding-top: 0px !important;
 }
 
 /* Element | https://app.roll20.net/editor/ */
-
 li.token:nth-child(n) > span:nth-child(3) {
-  padding-left: 5px !important;
+    padding-left: 5px !important;
     padding-top: 0px !important;
     padding-bottom: 2px !important;
-    
 }
 
 /* Element | https://app.roll20.net/editor/ */
-
 li.token:nth-child(n) > img:nth-child(n) {
-  padding-top: 1px !important;
+    padding-top: 1px !important;
 }
 
 #initiativewindow {
     scrollbar-width: none;
 }
-
-
-
 }
