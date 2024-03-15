@@ -1,14 +1,16 @@
+@-moz-document url-prefix("https://app.roll20.net/editor") {
 /* ==UserStyle==
 @name           Gnome20
 @namespace      https://app.roll20.net/editor
 @description    If you have to use Roll20, at least make it look nice!
 @author         AnthemV
-@version        1.9.9.9
+@version        1.9.9.9.9
 @license        Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
 @homepageURL    https://github.com/AnthemV/Gnome20
 @supportURL     https://github.com/AnthemV/Gnome20/issues
 @updateURL      https://github.com/AnthemV/Gnome20/raw/main/Gnome20.user.styl
 ==/UserStyle== */
+}
 
 @-moz-document url-prefix("https://app.roll20.net/editor") {
 /* Firefox Gnome Theme Colors */
@@ -109,9 +111,8 @@
     /* Private browsing info box */
     --gnome-private-text-primary-color: #FBFBFE;
 }
-}
 
-@-moz-document url-prefix("https://app.roll20.net/editor") {
+
 /* Updated Color CSS */
 /* Taken these directly from Firefox Gnome Theme (https://github.com/rafaelmardojai/firefox-gnome-theme). I had to take them from the light mode because the dark theme doesn't include all the color palletes, so I've selectively removed the light colors that caused issues */
 :root {
@@ -1335,8 +1336,8 @@ span.initiative.editable:hover {
 /* Move zoom container over to the left side of the screen */
 #vm_zoom_buttons {
     top: 324px !important;
-    left: 5px !important;
-    transition: top ease 200ms;
+    left: 4.5px !important;
+    transition: top ease 150ms;
 }
 
 /* Float the actual interactable bits to the left of their parent container */
@@ -1344,9 +1345,29 @@ span.initiative.editable:hover {
     float: left !important;
 }
 
+/* FOR PLAYERS */
 /* When the main toolbar is collapsed, move the zoom toolbar up */
 body:has(.master-toolbar-collapsed) #vm_zoom_buttons {
-    top: 40px !important;
+    top: 35px !important;
+}
+
+/* FOR GAMEMASTERS */
+/* If gamemaster things are present, place it down further, and overtop of the left sidebar */
+body:not(:has(.master-toolbar-collapsed)):has(#tokens-layer-button) #vm_zoom_buttons {
+    top: 394px !important;
+    z-index: 999999 !important;
+}
+
+/* Only applies to gamemaster view, when the screen height is less than 913px, and when the left sidebar isn't collapsed */
+@media (max-height: 913px) {
+    body:not(:has(.master-toolbar-collapsed)):has(#tokens-layer-button) #vm_zoom_buttons {
+        top: 42px !important;
+        left: unset !important;
+    }
+
+    body:not(:has(.master-toolbar-collapsed)):has(#tokens-layer-button) .parentContainer {
+        float: right !important;
+    }
 }
 }
 
@@ -1385,6 +1406,42 @@ body:has(.master-toolbar-collapsed) #vm_zoom_buttons {
 .dropdown-header-open[data-v-3b231786],
 .dropdown-header[data-v-3b231786]:hover {
     background-color: color(srgb 0.470588 0.682353 0.929412 / 0.16) !important;
+}
+
+
+/* GM Mode handle */
+#page-toolbar .handle, #page-toolbar .handle:active, #page-toolbar .handle:focus {
+    background: var(--surface-dark) !important;
+}
+
+#page-toolbar .handle:hover {
+    background: color-mix(in srgb, var(--surface-dark) 5%, #000) !important;
+}
+}
+
+@-moz-document url-prefix("https://app.roll20.net/editor") {
+/* GM Page Tool Menu  */
+#page-toolbar .pages .availablepage img.pagethumb {
+  border-radius: 12px;
+}
+}
+
+@-moz-document url-prefix("https://app.roll20.net/editor") {
+/* Old Right Click Menu */
+/* Context menu wrapper (the black border) */
+.d20contextmenu > ul {
+    overflow: hidden;
+}
+
+/* Context menu item */
+.actions_menu.d20contextmenu .hasSub {
+    background: var(--gnome-browser-before-load-background);
+    border-radius: 0px !important;
+}
+
+/* Hovered context menu item */
+.actions_menu.d20contextmenu .hasSub:hover {
+    background: color-mix(in srgb, var(--gnome-browser-before-load-background) 95%, white);
 }
 }
 
